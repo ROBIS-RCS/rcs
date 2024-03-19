@@ -4,13 +4,13 @@ import viteLogo from '/vite.svg'
 import './App.css'
 import Sidebar from "./Components/Sidebar/Sidebar"
 import Loginpage from './Components/login/Loginpage'
-
+import SignupPage from './Components/login/SignupPage'
 function App() {
   const [count, setCount] = useState(0)
 
   return (
     <div  className='w-full h-full p-0 m-0'>
-      <Sidebar/> 
+      <Sidebar/>
       <Loginpage/>
     </div>
   )
