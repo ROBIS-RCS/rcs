@@ -10,7 +10,6 @@ function App() {
   return (
     <div  className='w-full h-full p-0 m-0'>
       <Sidebar/>
-      <p>Hello</p>
     </div>
   )
 }
