@@ -5,6 +5,7 @@ import Sidebar from './Components/Sidebar/Sidebar';
 import Loginpage from './Components/login/Loginpage';
 import SignupPage from './Components/login/SignupPage';
 import { supabase } from '../server/createClient';
+import Login from './Components/login/NewLogin/Login';
 
 function App() {
   const [count, setCount] = useState(0);
@@ -16,6 +17,7 @@ function App() {
           <Route path='/' element={<Loginpage />} />
           <Route path='/signup' element={<SignupPage />} />
           <Route path='/home' element={<Sidebar/>}></Route>
+          <Route path="/newsign" element={<Login/>}></Route>
         </Routes>
       </Router>
     </div>
