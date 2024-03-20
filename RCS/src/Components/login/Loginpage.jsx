@@ -13,7 +13,7 @@ const Loginpage = () => {
   return (
     <div>
       <div className='login'>
-        <h1>Login</h1>
+        <h1 className='text-red-700 font-bold'>Login</h1>
         <p>Login As</p>
         <select value={empType} onChange={handleEmpTypeChange}>
           <option value="employee">Employee</option>
