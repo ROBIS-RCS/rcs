@@ -10,8 +10,18 @@ const Loginpage = () => {
     console.log(newEmpType); // Log the updated state
   };
 
-  return (
-    <div>
+  const [username, setUsername] = useState('');
+  const handleUsernameChange = (event) => {
+    setUsername(event.target.value);
+  };
+
+  const [password, setPassword] = useState('');
+  const handlePasswordChange = (event) => {
+    setPassword(event.target.value);
+  };
+
+  return (    
+    <div className='body'>
       <div className='login'>
         <h1 className='text-red-700 font-bold'>Login</h1>
         <p>Login As</p>
@@ -19,13 +29,18 @@ const Loginpage = () => {
           <option value="employee">Employee</option>
           <option value="manager">Manager</option>
           <option value="admin">Admin</option>
-        </select>
-        <p>Username</p>
-        <input className='username'></input>
-        <p>Password</p>
-        <input className='password'></input><br/>  
+        </select><br/>
+        <div className="input-wrapper">
+          <label className={username ? 'float-label' : ''}>Enter Username</label>
+          <input className='username' value={username} onChange={handleUsernameChange}></input>
+        </div>
+        <div className="input-wrapper">
+          <label className={password ? 'float-label' : ''}>Enter Password</label>
+          <input type="password" className='password' value={password} onChange={handlePasswordChange}></input>
+        </div>
+        <p className='new-user'>New User? <a href="/signup">Sign up</a></p>       
         <button className='Submit'>Submit</button>
-      </div>
+      </div>      
     </div>
   );
 };
