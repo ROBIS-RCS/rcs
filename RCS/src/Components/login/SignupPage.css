@@ -1,5 +1,5 @@
-.signup{
-    color: white;
+.signup {
+    color: rgb(9, 8, 8);
     width: 600px; /* Adjust width as needed */
     height: 650px; /* Adjust height as needed */
     background-color: #5c59595c;
@@ -16,24 +16,49 @@
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-}
-.signupSubmit{
+  }
+  
+  .signupSubmit {
     background-color: #24272a;
     color: white;
     border: none;
     border-radius: 5px;
     cursor: pointer;
-    height: 60px;
-    width: 80px;
-}
-input{
+    height: 50px;
+    width: 100px;
+  }
+  
+  input {
     width: 200px; /* Make inputs full width */
     height: 40px;
     margin-bottom: 10px;
     border-radius: 10px;
     border: 0px;
     background-color: rgba(255, 255, 255, 0.992);
-}
-.signupSubmit:hover {
+    padding-left: 10px; /* Add left padding */
+  }
+  
+  .input-wrapper {
+    position: relative;
+    margin-bottom: 10px; /* Adjust as needed */
+  }
+  
+  label {
+    position: absolute;
+    left: 10px; /* Adjust as needed */
+    top: 50%;
+    transform: translateY(-70%);
+    transition: all 0.3s ease-in-out;
+    pointer-events: none; /* Ensure label doesn't intercept click events */
+  }
+  
+  .float-label {
+    transform: translateY(-180%) scale(0.8); /* Adjust as needed */
+    color: #333; /* Adjust label color when floating */
+    font-size: 12px; /* Adjust font size when floating */
+  }
+  
+  .signupSubmit:hover {
     background-color: #8c8f91; /* Change color on hover */
   }
+  
