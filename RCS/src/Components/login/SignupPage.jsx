@@ -1,9 +1,33 @@
-import React from 'react';
+import React, { useState } from 'react';
 import './SignupPage.css';
-import { supabase} from '../../../server/createClient';
-
 
 const SignupPage = () => {
+  const [enrollAs, setEnrollAs] = useState("employee");
+  const [username, setUsername] = useState('');
+  const [email, setEmail] = useState('');
+  const [password, setPassword] = useState('');
+  const [confirmPassword, setConfirmPassword] = useState('');
+
+  const handleEnrollAsChange = (event) => {
+    setEnrollAs(event.target.value);
+  };
+
+  const handleUsernameChange = (event) => {
+    setUsername(event.target.value);
+  };
+
+  const handleEmailChange = (event) => {
+    setEmail(event.target.value);
+  };
+
+  const handlePasswordChange = (event) => {
+    setPassword(event.target.value);
+  };
+
+  const handleConfirmPasswordChange = (event) => {
+    setConfirmPassword(event.target.value);
+  };
+
   return (
     <div className='body'>
       <div className='signup'>
