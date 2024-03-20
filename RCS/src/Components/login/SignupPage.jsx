@@ -1,7 +1,11 @@
-import React from 'react';
+import React,{useState} from 'react';
 import './SignupPage.css';
+import { supabase} from '../../../server/createClient';
+
 
 const SignupPage = () => {
+
+  
   return (
     <div className='body'>
       <div className='signup'>
