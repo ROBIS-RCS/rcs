@@ -23,7 +23,7 @@ const Loginpage = () => {
   return (    
     <div className='body'>
       <div className='login'>
-        <h1 className='text-red-700 font-bold'>Login</h1>
+        <h1 className='head'>Login</h1>
         <p>Login As</p>
         <select value={empType} onChange={handleEmpTypeChange}>
           <option value="employee">Employee</option>
@@ -31,11 +31,11 @@ const Loginpage = () => {
           <option value="admin">Admin</option>
         </select><br/>
         <div className="input-wrapper">
-          <label className={username ? 'float-label' : ''}>Enter Username</label>
+          <label className={username ? 'float-label' : ''}>Username</label>
           <input className='username' value={username} onChange={handleUsernameChange}></input>
-        </div>
+        </div><br/>
         <div className="input-wrapper">
-          <label className={password ? 'float-label' : ''}>Enter Password</label>
+          <label className={password ? 'float-label' : ''}>Password</label>
           <input type="password" className='password' value={password} onChange={handlePasswordChange}></input>
         </div>
         <p className='new-user'>New User? <a href="/signup">Sign up</a></p>       
