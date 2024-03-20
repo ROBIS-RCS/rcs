@@ -1,12 +1,12 @@
 .signup{
     color: white;
     width: 600px; /* Adjust width as needed */
-    height: 800px; /* Adjust height as needed */
+    height: 600px; /* Adjust height as needed */
     background-color: #f0f0f034;
     border-radius: 10px;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     font-style: italic;
-    padding: 20px;
+    padding: 10px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
     display: flex;
     flex-direction: column;

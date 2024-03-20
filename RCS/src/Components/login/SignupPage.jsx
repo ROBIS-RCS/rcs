@@ -11,7 +11,7 @@ const SignupPage = () => {
           <option value="employee">Employee</option>
           <option value="manager">Manager</option>
           <option value="admin">Admin</option>
-        </select><br/> 
+        </select>
         <p>Username</p>
         <input className='signupusername'></input>
         <p>Email ID</p>
