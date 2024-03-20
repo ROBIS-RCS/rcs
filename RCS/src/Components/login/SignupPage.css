@@ -1,7 +1,7 @@
 .signup{
     color: white;
     width: 600px; /* Adjust width as needed */
-    height: 600px; /* Adjust height as needed */
+    height: 650px; /* Adjust height as needed */
     background-color: #f0f0f034;
     border-radius: 10px;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
@@ -15,7 +15,7 @@
     position: absolute;
     top: 50%;
     left: 50%;
-    transform: translate(-100%, -50%);
+    transform: translate(-50%, -50%);
 }
 .signupSubmit{
     background-color: #24272a;

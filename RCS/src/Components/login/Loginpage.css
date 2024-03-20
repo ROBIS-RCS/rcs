@@ -1,7 +1,7 @@
 body {
     margin: 0;
     padding: 0;
-    background-image: url('C:\Users\Srivathsan.Ganesan\Documents\GitHub\rcs\RCS\src\assets\BGimg\image.jpg'); /* Replace 'path/to/your/image.jpg' with the actual path to your image */
+    background-image: url('C:\Users\Srivathsan.Ganesan\Documents\GitHub\rcs\RCS\src\assets\BGimg\6938839_3409297.jpg'); /* Replace 'path/to/your/image.jpg' with the actual path to your image */
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
@@ -24,7 +24,36 @@ body {
     position: absolute;
     top: 50%;
     left: 50%;
-    transform: translate(50%, -50%);
+    transform: translate(-50%, -50%);
+  }
+  .input-wrapper {
+    position: relative;
+    margin-bottom: 20px; /* Adjust as needed */
+  }
+  
+  input.username,
+  input.password {
+    width: 200px; /* Make inputs full width */
+    height: 30px;
+    border-radius: 10px;
+    border: 0px;
+    background-color: rgba(255, 245, 238, 0.378);
+    padding-left: 10px; /* Adjust as needed */
+  }
+  
+  label {
+    position: absolute;
+    left: 10px; /* Adjust as needed */
+    top: 40%;
+    transform: translateY(-50%);
+    transition: all 0.3s ease-in-out;
+    pointer-events: none; /* Ensure label doesn't intercept click events */
+  }
+  
+  .float-label {
+    transform: translateY(-100%) scale(0.8); /* Adjust as needed */
+    color: #f6efef; /* Adjust label color when floating */
+    font-size: 12px; /* Adjust font size when floating */
   }
   .font-bold {
     font-weight: bold;
