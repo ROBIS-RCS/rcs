@@ -8,10 +8,10 @@ body {
     height: 100vh; /* Ensure the background covers the entire viewport height */
   }
   .login {
-    color: white;
+    color: rgb(0, 0, 0);
     width: 400px; /* Adjust width as needed */
     height: 500px; /* Adjust height as needed */
-    background-color: #f0f0f034;
+    background-color: #5c59595c;
     border-radius: 10px;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     font-style: italic;
@@ -34,7 +34,7 @@ body {
   input.username,
   input.password {
     width: 200px; /* Make inputs full width */
-    height: 30px;
+    height: 50px;
     border-radius: 10px;
     border: 0px;
     background-color: rgba(255, 245, 238, 0.378);
@@ -51,8 +51,8 @@ body {
   }
   
   .float-label {
-    transform: translateY(-100%) scale(0.8); /* Adjust as needed */
-    color: #f6efef; /* Adjust label color when floating */
+    transform: translateY(-150%) scale(1); /* Adjust as needed */
+    color: #0e0e0e; /* Adjust label color when floating */
     font-size: 12px; /* Adjust font size when floating */
   }
   .font-bold {
