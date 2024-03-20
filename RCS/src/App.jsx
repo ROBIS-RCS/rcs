@@ -4,6 +4,7 @@ import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Sidebar from './Components/Sidebar/Sidebar';
 import Loginpage from './Components/login/Loginpage';
 import SignupPage from './Components/login/SignupPage';
+import { supabase } from '../server/createClient';
 
 function App() {
   const [count, setCount] = useState(0);
