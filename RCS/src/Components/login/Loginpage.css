@@ -27,7 +27,7 @@ body {
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  box-shadow: 0px 0px 100px 5px #24272a6b;
+  box-shadow: 0px 0px 10px 5px #24272a6b;
 }
 .head{
   font-size: 40px;
