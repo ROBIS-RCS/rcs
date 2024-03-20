@@ -11,6 +11,7 @@ const Loginpage = () => {
   };
 
   return (
+    <body>
     <div>
       <div className='login'>
         <h1 className='text-red-700 font-bold'>Login</h1>
@@ -23,10 +24,12 @@ const Loginpage = () => {
         <p>Username</p>
         <input className='username'></input>
         <p>Password</p>
-        <input className='password'></input><br/>  
+        <input className='password'></input><br/> 
+        <p className='new-user'>New User? <a href="/signup">Sign up</a></p>       
         <button className='Submit'>Submit</button>
-      </div>
+      </div>      
     </div>
+    </body>
   );
 };
 
