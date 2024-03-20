@@ -29,8 +29,9 @@ const SignupPage = () => {
   };
 
   return (
+  
     <div className='body'>
-      <div className='signup'>
+      <form className='signup'>
         <h1 className='signuphead'>Sign up</h1>
         <p>Enroll As</p>
         <select className='enroll-as' value={enrollAs} onChange={handleEnrollAsChange}>
@@ -56,7 +57,7 @@ const SignupPage = () => {
         </div><br/>
         <p className='Existing-User'>Existing User? <a href="/">Login</a></p>
         <button className='signupSubmit'>Submit</button>
-      </div>
+      </form>
     </div>
   );
 };
