@@ -1,4 +1,4 @@
-import { FaCarRear } from "react-icons/fa6";  //Vehicle
+import { IoCarOutline } from "react-icons/io5";  //Vehicle
 import { AiFillWarning } from "react-icons/ai";  //AGV Breakdown
 import { ImStatsDots } from "react-icons/im";  //Stat Utilization
 import { FaTasks } from "react-icons/fa";   //Task Parameters
@@ -16,67 +16,67 @@ import { MdDataObject } from "react-icons/md";  //Log
 const dataRCS = [
     {
         name:"Vehicle",
-        logo:<FaCarRear />,
+        logo:<IoCarOutline size={25} color="white"/>,
         path:"",
     },
     {
         name:"AGV Breakdown",
-        logo:<AiFillWarning />,
+        logo:<AiFillWarning size={25} color="white"/>,
         path:"",
     },
     {
         name:"Stat Utilization",
-        logo:<ImStatsDots />,
+        logo:<ImStatsDots size={25} color="white"/>,
         path:"",
     },
     {
         name:"Task Parameters",
-        logo:<FaTasks />,
+        logo:<FaTasks size={25} color="white"/>,
         path:"",
     },
     {
         name:"Order Processing",
-        logo:<HiMiniCpuChip />,
+        logo:<HiMiniCpuChip size={25} color="white"/>,
         path:"",
     },
     {
         name:"District",
-        logo:<MdOutlineLocationCity />,
+        logo:<MdOutlineLocationCity size={25} color="white"/>,
         path:"",
     },
     {
         name:"Storage Bin",
-        logo:<GrStorage />,
+        logo:<GrStorage size={25} color="white"/>,
         path:"",
     },
     {
         name:"Storage Bin Status",
-        logo:<FaNetworkWired />,
+        logo:<FaNetworkWired size={25} color="white"/>,
         path:"",
     },
     {
         name:"Storage Bin Statistics",
-        logo:<ImStatsBars />,
+        logo:<ImStatsBars size={25} color="white"/>,
         path:"",
     },
     {
         name:"Current Order",
-        logo:<TiSpanner />,
+        logo:<TiSpanner size={25} color="white"/>,
         path:"",
     },
     {
         name:"Order",
-        logo:<GrUserWorker />,
+        logo:<GrUserWorker size={25} color="white"/>,
         path:"",
     },
     {
         name:"Task",
-        logo:<MdTask />,
+        logo:<MdTask size={25} color="white"/>,
         path:"",
     },
     {
         name:"Log",
-        logo:<MdDataObject />,
+        logo:<MdDataObject size={25} color="white"/>,
         path:"",
     },
 ]
