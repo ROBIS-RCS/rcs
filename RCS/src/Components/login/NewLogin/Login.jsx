@@ -1,30 +1,63 @@
-import MothersonS from "../../../assets/Logo/Motherson-s.png"
+import Motherson from "../../../assets/Logo/Motherson.png"
+import {useState} from "react"
+import {Link} from "react-router-dom"
+import "./login.css"
+
+//Icons
+import { IoIosEye } from "react-icons/io";  // Password Eye Open
+import { IoIosEyeOff } from "react-icons/io";  //Password Eyes Close
 
 
 const Login = () => {
+    const [show, setShow] = useState(false)
+    const [focus, setFocus] = useState(false)
+
+    const showP = () =>{
+        setShow(!show)
+        console.log(show);
+    }
+
+    const Inputfocus = () => {
+        setFocus(!focus)
+    }
   return (
-    <div className="w-full h-[100vh] flex items-center justify-center">
-        <div className="w-[700px] p-10 bg-[#F1F1F1] rounded-[25px] shadow">
+    <div className="w-full h-[100vh] flex items-center justify-center scale-90">
+        <div className="w-[700px] p-12 bg-[#F1F1F1] rounded-[25px] loginDiv">
             <div className="flex items-center justify-end p-5">
-                <img src={MothersonS} alt="" className="w-[50px]"/>
+                <img src={Motherson} alt="" className="h-[40px]"/>
             </div>
-            <div className="flex items-center justify-start ">
-                <p className="text-[32px] font-bold font-sans">LOGIN</p>
+            <div className="flex items-center justify-start mt-10">
+                <p className="text-[36px] font-bold font-sans not-italic">LOGIN</p>
             </div>
-            <div className="w-full border-2 flex flex-col gap-10">
-                <div className="grid grid-cols-[2fr,1fr] gap-5 mt-10">
-                    <input type="text" placeholder="UserName" className="p-4 w-full focus:bg-white bg-transparent py-6 outline-none rounded-none border-b-2 border-red-600" />
-                    <select className="w-full h-full p-2 outline-none font-sans text-[16px] not-italic gap-5 border-none">
-                        <option value="Employee">Employee</option>
-                        <option value="Manager">Manager</option>
-                        <option value="Admin">Admin</option>
-                    </select>
+            <form action="">
+                <div className="w-full flex flex-col gap-3">
+                    <div className="flex flex-col justify-center mt-16 gap-10">
+                        <span className="grid grid-cols-[2.5fr,1fr] gap-4">
+                        <span className="w-fulll border-b-2 border-black rounded-[5px]"><input type="text" placeholder="UserName" className="placeholder:font-bold hover:placeholder:text-[18px] hover:placeholder:duration-500 duration-500 ocus:text-[18px] font-semibold p-4 w-full bg-transparent py-6 outline-none rounded-[5px]" required /></span>
+                            <select className="w-full appearance-none h-full px-10 flex items-center justify-center outline-none font-sans text-[16px] font-bold text-[#D82226] not-italic gap-5 border-none selection:w-10">
+                                <option value="Employee" className="text-black">Employee</option>
+                                <option value="Manager" className="text-black">Manager</option>
+                                <option value="Admin" className="text-black">Admin</option>
+                            </select> 
+                        </span>
+                        <span className="w-fulll border-b-2 flex border-black rounded-[5px]">
+                            <input type={show ? "text":"password"} placeholder="Password" className="placeholder:font-bold hover:placeholder:text-[18px] hover:placeholder:duration-500 focus:text-[18px] font-semibold duration-500 p-4 w-full bg-transparent py-6 outline-none rounded-[5px]" required/>
+                            <span className=" h-full p-3 flex items-center justify-center bg-transparent inputFocusCont rounded-full hover:bg-white hover:bg-opacity-50 cursor-pointer"  onClick={showP}>
+                                {
+                                    show ? <IoIosEyeOff size={27} title="Hide Password"/> : <IoIosEye size={27} title="Show Password"/>
+                                }
+                            </span>
+                        </span>
+                    </div>
+                    <div className="w-full flex justify-end items-center" >
+                        <p className="font-semibold text-[14px] rounded-[2px] hover:drop-shadow-sm cursor-pointer font-sans text-[#D82226]">Forgot Password !</p>
+                    </div>
+                    <div className="flex gap-3 flex-col items-center justify-center p-4 mt-6">
+                        <input type="submit" value="Login" className="w-[150px] h-[45px] text-white text-[18px] font-bold not-italic bg-[#D82226]"/>
+                        <Link to="/newsign"><p className="font-[500] tracking-wide underline ">   Create new user ?  </p></Link>
+                    </div>
                 </div>
-                <div className="w-full border-2 border-b-black rounded-full">
-                    <input type="text" placeholder="Password" className="p-4 w-full py-6 outline-none bg-transparent focus:bg-white border-b-2 border-red-600" />
-                </div>
-            </div>
-            
+            </form>
         </div>
     </div>
   )
