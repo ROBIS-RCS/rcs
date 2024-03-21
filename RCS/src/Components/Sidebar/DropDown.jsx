@@ -18,7 +18,7 @@ const DropDown = ({title, optionsArray}) => {
             </span>
             <img src={DropArrow} alt="" className={!clicked ?"duration-500 rotate-0 w-7" : "rotate-180 duration-500 w-7"} />
         </div>
-        <div className={clicked ? "w-full h-full scale-1 origin-top visible duration-300 rounded-b-[10px]" : "origin-top invisible h-0 w-0 scale-0 duration-300 rounded-b-[10px]"}>
+        <div className={clicked ? "w-full h-full scale-1 origin-top-left visible duration-300 rounded-b-[10px]" : "origin-top-left invisible h-0 w-0 scale-0 duration-300 rounded-b-[10px]"}>
           <div className="w-full h-full bg-[#0A0A00] rounded-b-[10px] pl-5 gap-2">
           {
             optionsArray?.map((option, key) => {
