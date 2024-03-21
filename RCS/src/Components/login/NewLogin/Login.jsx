@@ -51,6 +51,8 @@ const Login = () => {
                         <div className="w-full h-full relative items-center gap-3">
                             <label htmlFor="username" className={username ? "absolute left-3 top-[-10px] px-2 font-bold rounded-[5px] duration-200 text-[12px] selection:none" : "absolute left-4 top-3 duration-200 text-[16px] selection:none"}>Username</label>
                             <input type="text" placeholder="" name="username" id="username" className={`w-full outline-none py-3 text-[16px] px-4 border-b-2 rounded-md bg-transparent focus:bg-white ${username && "bg-white"} focus:duration-200 border-black selection:none no-select`} onChange={getName}/>
+                            <label htmlFor="username" className={username ? "absolute left-[-5px] top-[-28px] px-2 font-bold rounded-[5px] duration-200 text-[16px]" : "absolute left-4 top-3 duration-200 text-[16px]"}>Username</label>
+                            <input type="text" placeholder="" name="username" id="username" className={`w-full outline-none py-3 text-[16px] px-4 border-b-2 rounded-md bg-transparent focus:bg-white ${username && "bg-white"} focus:duration-200 border-black`} onChange={getName}/>
                         </div>
                         <select name="user" id="user" className="px-10 appearance-none rounded-[8px] outline-none text-[18px] font-bold tracking-wide text-[#D82226]" onChange={getUser}>
                             <option value="employee" className="text-black font-semibold">Employee</option>
@@ -67,7 +69,7 @@ const Login = () => {
                             {show ? <IoIosEyeOff size={27} color={iconClr && "#D82226"}/> : <IoIosEye size={27} color={iconClr && "#D82226"}/>}
                         </span>
                     </div>
-                    <span className="w-full">   {/* Password */}
+                    <span className="w-full">   {/* Forgott Password */}
                         <Link>
                             <p className="text-[#D82226] hover:text-black hover:underline hover:duration-200 text-[14px] pt-3 text-right">Forgot Password</p>
                         </Link>
