@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import './Loginpage.css';
-
+import {motion} from "framer-motion"
 const Loginpage = () => {
   const [empType, setEmpType] = useState("employee");
 
