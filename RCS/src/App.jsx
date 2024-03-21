@@ -7,7 +7,7 @@ import SignupPage from './Components/login/SignupPage';
 import { AnimatePresence } from 'framer-motion';
 import { supabase } from '../server/createClient';
 import Login from './Components/login/NewLogin/Login';
-
+import Signin from "./Components/login/NewSiginup/Signin"
 
 function App() {
   const [count, setCount] = useState(0);
@@ -19,7 +19,8 @@ function App() {
           <Route path='/' element={<Loginpage />} />
           <Route path='/signup' element={<SignupPage />} />
           <Route path='/home' element={<Sidebar/>}></Route>
-          <Route path='/newlog' element={<Login/>}></Route>
+          <Route path="/newlog" element={<Login/>}></Route>
+          <Route path="/newsign" element={<Login/>}></Route>
         </Routes>
         </AnimatePresence>
       </Router>

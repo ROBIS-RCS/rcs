@@ -10,55 +10,75 @@ import { IoIosEyeOff } from "react-icons/io";  //Password Eyes Close
 
 const Login = () => {
     const [show, setShow] = useState(false)
-    const [focus, setFocus] = useState(false)
+    const [iconClr, setIconClr] = useState(false)
+    const [username, setUsername] = useState("")  //For Storing Username
+    const [password, setPassword] = useState("")  //For Storing Password
+    const [user, setUser] = useState("Employee")  //for storing the type of the Faculty / User
+    
 
-    const showP = () =>{
+    const getName = (e) => {
+        setUsername(e.target.value)
+    }
+
+    const getPass = (e) => {
+        setPassword(e.target.value)
+    }
+
+    const getUser = (e) => {
+        setUser(e.target.value)
+    }
+
+    const showPass = () => {
         setShow(!show)
-        console.log(show);
     }
 
-    const Inputfocus = () => {
-        setFocus(!focus)
+    const changeColor = () =>{
+        setIconClr(!iconClr)
     }
+
   return (
-    <div className="w-full h-[100vh] flex items-center justify-center scale-90">
-        <div className="w-[700px] p-12 bg-[#F1F1F1] rounded-[25px] loginDiv">
-            <div className="flex items-center justify-end p-5">
-                <img src={Motherson} alt="" className="h-[40px]"/>
+    <div className="w-[680px] h-[580px] bg-[#F1F1F1] px-14 py-12 flex flex-col rounded-[25px]">
+        <form action="">
+            <div className="flex justify-end">
+                <img src={Motherson} alt="" className="h-8" />
             </div>
-            <div className="flex items-center justify-start mt-10">
-                <p className="text-[36px] font-bold font-sans not-italic">LOGIN</p>
+            <div className="flex mt-10">
+                <p className=" text-black text-[32px] font-bold not-italic">LOGIN</p>
             </div>
-            <form action="">
-                <div className="w-full flex flex-col gap-3">
-                    <div className="flex flex-col justify-center mt-16 gap-10">
-                        <span className="grid grid-cols-[2.5fr,1fr] gap-4">
-                        <span className="w-fulll border-b-2 border-black rounded-[5px]"><input type="text" placeholder="UserName" className="placeholder:font-bold hover:placeholder:text-[18px] hover:placeholder:duration-500 duration-500 ocus:text-[18px] font-semibold p-4 w-full bg-transparent py-6 outline-none rounded-[5px]" required /></span>
-                            <select className="w-full appearance-none h-full px-10 flex items-center justify-center outline-none font-sans text-[16px] font-bold text-[#D82226] not-italic gap-5 border-none selection:w-10">
-                                <option value="Employee" className="text-black">Employee</option>
-                                <option value="Manager" className="text-black">Manager</option>
-                                <option value="Admin" className="text-black">Admin</option>
-                            </select> 
-                        </span>
-                        <span className="w-fulll border-b-2 flex border-black rounded-[5px]">
-                            <input type={show ? "text":"password"} placeholder="Password" className="placeholder:font-bold hover:placeholder:text-[18px] hover:placeholder:duration-500 focus:text-[18px] font-semibold duration-500 p-4 w-full bg-transparent py-6 outline-none rounded-[5px]" required/>
-                            <span className=" h-full p-3 flex items-center justify-center bg-transparent inputFocusCont rounded-full hover:bg-white hover:bg-opacity-50 cursor-pointer"  onClick={showP}>
-                                {
-                                    show ? <IoIosEyeOff size={27} title="Hide Password"/> : <IoIosEye size={27} title="Show Password"/>
-                                }
-                            </span>
-                        </span>
+            <div className="w-full h-full mt-10">
+                <div className="grid grid-cols-[2.5fr,1fr] gap-4">  {/* UserName */}
+                    <div className="w-full h-full relative items-center gap-3">
+                        <label htmlFor="username" className={username ? "absolute left-3 top-[-10px] px-2 bg-white rounded-[5px] duration-200 text-[12px]" : "absolute left-4 top-3 duration-200 text-[16px]"}>Username</label>
+                        <input type="text" placeholder="" name="username" id="username" className={`w-full outline-none py-3 text-[16px] px-4 border-b-2 rounded-md bg-transparent focus:bg-white ${username && "bg-white"} focus:duration-200 border-black`} onChange={getName}/>
                     </div>
-                    <div className="w-full flex justify-end items-center" >
-                        <p className="font-semibold text-[14px] rounded-[2px] hover:drop-shadow-sm cursor-pointer font-sans text-[#D82226]">Forgot Password !</p>
-                    </div>
-                    <div className="flex gap-3 flex-col items-center justify-center p-4 mt-6">
-                        <input type="submit" value="Login" className="w-[150px] h-[45px] text-white text-[18px] font-bold not-italic bg-[#D82226]"/>
-                        <Link to="/newsign"><p className="font-[500] tracking-wide underline ">   Create new user ?  </p></Link>
-                    </div>
+                    <select className="px-10 appearance-none rounded-[8px] outline-none text-[18px] font-bold tracking-wide text-[#D82226]">
+                        <option value="Employee" className="text-black font-semibold">Employee</option>
+                        <option value="Manager" className="text-black font-semibold">Manager</option>
+                        <option value="Admin" className="text-black font-semibold">Admin</option>
+                    </select>
                 </div>
-            </form>
-        </div>
+                <div className="mt-10 flex items-center relative ">  {/* Password */}
+                    <div className="w-full h-full relative items-center gap-3">
+                        <label htmlFor="password" className={password ? "absolute left-3 top-[-10px] px-2 bg-white rounded-[5px] duration-200 text-[12px]" : "absolute left-4 top-3 duration-200 text-[16px]"}>Password</label>
+                        <input type={show ? "text" : "password"} placeholder="" name="password" id="password" className={`w-full outline-none py-3 text-[16px] px-4 border-b-2 rounded-md bg-transparent focus:bg-white ${password && "bg-white"} focus:duration-200 border-black`} onChange={getPass}/>
+                    </div>
+                    <span onClick={showPass} className="px-5 py-[11px] cursor-pointer duration-300 absolute right-0" onMouseEnter={changeColor} onMouseLeave={changeColor}>
+                        {show ? <IoIosEyeOff size={27} color={iconClr && "#D82226"}/> : <IoIosEye size={27} color={iconClr && "#D82226"}/>}
+                    </span>
+                </div>
+                <span className="w-full">   {/* Password */}
+                    <Link>
+                        <p className="text-[#D82226] hover:text-black hover:underline hover:duration-200 text-[14px] pt-3 text-right">Forgot Password</p>
+                    </Link>
+                </span>
+                 
+                <div className="w-full flex flex-col items-center justify-center mt-[70px] gap-2">
+                    <input type="submit" value="Login" className="px-10 py-2 bg-[#D82226] text-white font-bold text-[18px] rounded-[6px] hover:bg-[#d82225ee]" />
+                    <Link><p className="text-[12px] font-semibold text-black hover:underline hover:duration-200">   Craete new user ?   </p></Link>
+                </div>
+
+            </div>
+        </form>
     </div>
   )
 }
