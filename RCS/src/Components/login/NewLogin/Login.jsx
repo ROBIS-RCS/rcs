@@ -13,7 +13,7 @@ const Login = () => {
     const [iconClr, setIconClr] = useState(false)
     const [username, setUsername] = useState("")  //For Storing Username
     const [password, setPassword] = useState("")  //For Storing Password
-    const [user, setUser] = useState("Employee")  //for storing the type of the Faculty / User
+    const [user, setUser] = useState("")  //for storing the type of the Faculty / User
     
 
     const getName = (e) => {
@@ -38,10 +38,10 @@ const Login = () => {
 
   return (
     <div className="w-[100vw] h-[100vh] flex items-center justify-center overflow-hidden bg-gradient-to-br from-white to-neutral-500">
-        <div className="w-[680px] h-[580px] bg-[#F1F1F1] px-14 py-12 flex flex-col rounded-[25px]">
-            <form action="">
+        <div className="w-[680px] h-[580px] bg-[#F1F1F1] px-14 py-12 flex flex-col rounded-[25px] shadow-2xl">
+            <form action={`http://localhost:5173/newlog?username=${username}&user=${user}&password=${password}`}>
                 <div className="flex justify-end">
-                    <img src={Motherson} alt="" className="h-8" />
+                    <img src={Motherson} alt="" className="h-8 selection:none" draggable="false" />
                 </div>
                 <div className="flex mt-10">
                     <p className=" text-black text-[32px] font-bold not-italic">LOGIN</p>
@@ -49,19 +49,19 @@ const Login = () => {
                 <div className="w-full h-full mt-10">
                     <div className="grid grid-cols-[2.5fr,1fr] gap-4">  {/* UserName */}
                         <div className="w-full h-full relative items-center gap-3">
-                            <label htmlFor="username" className={username ? "absolute left-3 top-[-10px] px-2 font-bold rounded-[5px] duration-200 text-[12px]" : "absolute left-4 top-3 duration-200 text-[16px]"}>Username</label>
-                            <input type="text" placeholder="" name="username" id="username" className={`w-full outline-none py-3 text-[16px] px-4 border-b-2 rounded-md bg-transparent focus:bg-white ${username && "bg-white"} focus:duration-200 border-black`} onChange={getName}/>
+                            <label htmlFor="username" className={username ? "absolute left-3 top-[-10px] px-2 font-bold rounded-[5px] duration-200 text-[12px] selection:none" : "absolute left-4 top-3 duration-200 text-[16px] selection:none"}>Username</label>
+                            <input type="text" placeholder="" name="username" id="username" className={`w-full outline-none py-3 text-[16px] px-4 border-b-2 rounded-md bg-transparent focus:bg-white ${username && "bg-white"} focus:duration-200 border-black selection:none no-select`} onChange={getName}/>
                         </div>
-                        <select className="px-10 appearance-none rounded-[8px] outline-none text-[18px] font-bold tracking-wide text-[#D82226]" onChange={getUser}>
-                            <option value="Employee" className="text-black font-semibold">Employee</option>
-                            <option value="Manager" className="text-black font-semibold">Manager</option>
-                            <option value="Admin" className="text-black font-semibold">Admin</option>
+                        <select name="user" id="user" className="px-10 appearance-none rounded-[8px] outline-none text-[18px] font-bold tracking-wide text-[#D82226]" onChange={getUser}>
+                            <option value="employee" className="text-black font-semibold">Employee</option>
+                            <option value="eanager" className="text-black font-semibold">Manager</option>
+                            <option value="admin" className="text-black font-semibold">Admin</option>
                         </select>
                     </div>
                     <div className="mt-14 flex items-center relative ">  {/* Password */}
                         <div className="w-full h-full relative items-center gap-3">
-                            <label htmlFor="password" className={password ? "absolute left-[-5px] top-[-28px] px-2 font-bold rounded-[5px] duration-200 text-[16px]" : "absolute left-4 top-3 duration-200 text-[16px]"}>Password</label>
-                            <input type={show ? "text" : "password"} placeholder="" name="password" id="password" className={`w-full outline-none py-3 text-[16px] px-4 border-b-2 rounded-md bg-transparent focus:bg-white ${password && "bg-white"} focus:duration-200 border-black`} onChange={getPass}/>
+                            <label htmlFor="password" className={password ? "absolute left-[-5px] top-[-28px] px-2 font-bold rounded-[5px] duration-200 text-[16px] selection:none" : "absolute left-4 top-3 duration-200 text-[16px] selection:none"}>Password</label>
+                            <input type={show ? "text" : "password"} placeholder="" name="password" id="password" className={`w-full outline-none py-3 text-[16px] px-4 border-b-2 rounded-md bg-transparent focus:bg-white ${password && "bg-white"} focus:duration-200 border-black no-select`} onChange={getPass}/>
                         </div>
                         <span onClick={showPass} className="px-5 py-[11px] cursor-pointer duration-300 absolute right-0" onMouseEnter={changeColor} onMouseLeave={changeColor}>
                             {show ? <IoIosEyeOff size={27} color={iconClr && "#D82226"}/> : <IoIosEye size={27} color={iconClr && "#D82226"}/>}
@@ -75,7 +75,7 @@ const Login = () => {
                         
                     <div className="w-full flex flex-col items-center justify-center mt-[70px] gap-2">
                         <input type="submit" value="Login" className="px-10 py-2 bg-[#D82226] text-white font-bold text-[18px] rounded-[6px] hover:bg-[#d82225ee]" />
-                        <Link><p className="text-[12px] font-semibold text-black hover:underline hover:duration-200">   Craete new user ?   </p></Link>
+                        <Link to="/newsign"><p className="text-[12px] font-semibold text-black hover:underline hover:duration-200">   Craete new user ?   </p></Link>
                     </div>
 
                 </div>
