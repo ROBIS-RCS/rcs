@@ -17,6 +17,15 @@ import { TiSpanner } from "react-icons/ti";  //Current Order
 import { GrUserWorker } from "react-icons/gr";  //Order
 import { MdTask } from "react-icons/md"; //Task
 import { MdDataObject } from "react-icons/md";  //Log
+import { MdError } from "react-icons/md";
+import { FaLocationCrosshairs } from "react-icons/fa6";
+import { FaUserCircle } from "react-icons/fa";
+import { FaUserCog } from "react-icons/fa";
+import { FaLanguage } from "react-icons/fa";
+import { FaDesktop } from "react-icons/fa";
+import { IoGitNetworkSharp } from "react-icons/io5";
+import { FaMapMarkedAlt } from "react-icons/fa";
+
 
 const dataRCS = [
   {
@@ -88,58 +97,72 @@ const dataRCS = [
 
 const dataSystem =[
     {
-        name:"Vehicle",
-        logo:<IoCarOutline size={25} color="white"/>,
+        name:"Users",
+        logo:<FaUserCircle size={25} color="white"/>,
         path:"/",
     },
     {
-        name:"AGV Breakdown",
-        logo:<AiFillWarning size={25} color="white"/>,
+        name:"Roles",
+        logo:<FaUserCog size={25} color="white"/>,
         path:"/",
     },
     {
-        name:"Stat Utilization",
-        logo:<ImStatsDots size={25} color="white"/>,
+        name:"Language",
+        logo:<FaLanguage size={25} color="white"/>,
         path:"/",
     }
 ]
 
 const dataMS =[
     {
-        name:"Vehicle",
+        name:"AGV Management",
         logo:<IoCarOutline size={25} color="white"/>,
         path:"/",
     },
     {
-        name:"AGV Breakdown",
+        name:"Realtime Map",
+        logo:<FaMapMarkedAlt size={25} color="white"/>,
+        path:"/",
+    },
+    {
+        name:"Error Records",
+        logo:<ImStatsDots size={25} color="white"/>,
+        path:"/",
+    },
+    {
+        name:"Error codes",
+        logo:<MdError size={25} color="white"/>,
+        path:"/",
+    },
+    {
+        name:"AGV Errors",
         logo:<AiFillWarning size={25} color="white"/>,
         path:"/",
     },
     {
-        name:"Stat Utilization",
+        name:"AGV Task",
+        logo:<IoGitNetworkSharp size={25} color="white"/>,
+        path:"/",
+    },
+    {
+        name:"AGV Work",
         logo:<ImStatsDots size={25} color="white"/>,
         path:"/",
-    }
+    },
 ]
 const Sidebar = () => {
-
-  return (
-    <div className='w-[15%] h-screen bg-[#911515] duration-500ms flex items-center justify-start flex-col gap-5 pb-10 hoverShowSideBar'>
-      <div className='w-[200px] py-1 px-1 rounded-tl-[60px] rounded-br-[60px] drop-shadow-2xl  flex items-center justify-left '>
-          <img src={MothersonS} alt="" className='w-[200px]'/>
+    return (
+      <div className='w-[20%] h-100% bg-[#911515] duration-500ms flex items-center justify-start flex-col gap-5 pb-10 hoverShowSideBar'>
+        <div className='w-[200px] py-1 px-1 rounded-tl-[60px] rounded-br-[60px] drop-shadow-2xl  flex items-center justify-left '>
+            <img src={MothersonS} alt="" className='w-[200px]'/>
+        </div>
+        <div className='w-[calc(100%-30px)]  flex flex-col items-center justify-center p-3 bg-[#EEEEEE] rounded-[10px]'>
+          <DropDown title={"System"} optionsArray={dataSystem} icon={<FaDesktop size={25}  color="white" />} />
+          <DropDown title={"RCS"} optionsArray={dataRCS} icon={<FaLocationCrosshairs size={25} color="white" />} />
+          <DropDown title={"Monitoring System"} optionsArray={dataMS} icon={<ImStatsDots size={25} color="white" />} />
+        </div>
+        <a href="/" class="subpixel-antialiased text-20px text-white "> Login</a>
       </div>
-      <div className='w-[calc(100%-30px)] flex flex-col items-center justify-center p-0.5 bg-[#EEEEEE] rounded-[10px]'>
-        <DropDown title={"System"} optionsArray={dataSystem}/>
-        <DropDown title={"RCS"} optionsArray={dataRCS}/>
-        <DropDown title={"Monitoring System"}optionsArray={dataMS}/>
-      </div>
-      <a href="/" class="subpixel-antialiased text-20px text-white "> Login</a>
-
-      <div >
-       
-      </div>
-    </div>
-  )
-}
-
+    );
+  };
 export default Sidebar
