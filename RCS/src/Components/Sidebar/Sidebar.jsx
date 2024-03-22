@@ -1,5 +1,5 @@
 import React from 'react'
-import MothersonS from "../../assets/Logo/Motherson-s.png"
+import MothersonS from "../../assets/Logo/MOTHERSON_white.png"
 import DropDown from './DropDown'
 import "./hoverAnim.css"
 // import dataRCS from './dataRCS'
@@ -86,19 +86,57 @@ const dataRCS = [
   },
 ]
 
+const dataSystem =[
+    {
+        name:"Vehicle",
+        logo:<IoCarOutline size={25} color="white"/>,
+        path:"/",
+    },
+    {
+        name:"AGV Breakdown",
+        logo:<AiFillWarning size={25} color="white"/>,
+        path:"/",
+    },
+    {
+        name:"Stat Utilization",
+        logo:<ImStatsDots size={25} color="white"/>,
+        path:"/",
+    }
+]
 
-
+const dataMS =[
+    {
+        name:"Vehicle",
+        logo:<IoCarOutline size={25} color="white"/>,
+        path:"/",
+    },
+    {
+        name:"AGV Breakdown",
+        logo:<AiFillWarning size={25} color="white"/>,
+        path:"/",
+    },
+    {
+        name:"Stat Utilization",
+        logo:<ImStatsDots size={25} color="white"/>,
+        path:"/",
+    }
+]
 const Sidebar = () => {
 
   return (
-    <div className='w-[22%] h-screen bg-[#494949] duration-300ms flex items-center justify-start flex-col gap-5 pb-10 hoverShowSideBar'>
-      <div className='w-[calc(100%-30px)] py-5 px-3 rounded-tl-[60px] rounded-br-[60px] drop-shadow-2xl  flex items-center justify-left '>
-          <img src={MothersonS} alt="" className='w-[35px]'/>
+    <div className='w-[15%] h-screen bg-[#911515] duration-500ms flex items-center justify-start flex-col gap-5 pb-10 hoverShowSideBar'>
+      <div className='w-[200px] py-1 px-1 rounded-tl-[60px] rounded-br-[60px] drop-shadow-2xl  flex items-center justify-left '>
+          <img src={MothersonS} alt="" className='w-[200px]'/>
       </div>
-      <div className='w-[calc(100%-30px)] flex flex-col items-center justify-center p-1 bg-black rounded-[10px]'>
-        <DropDown title={"System"} />
+      <div className='w-[calc(100%-30px)] flex flex-col items-center justify-center p-0.5 bg-[#EEEEEE] rounded-[10px]'>
+        <DropDown title={"System"} optionsArray={dataSystem}/>
         <DropDown title={"RCS"} optionsArray={dataRCS}/>
-        <DropDown title={"Monitoring System"}/>
+        <DropDown title={"Monitoring System"}optionsArray={dataMS}/>
+      </div>
+      <a href="/" class="subpixel-antialiased text-20px text-white "> Login</a>
+
+      <div >
+       
       </div>
     </div>
   )
