@@ -120,7 +120,7 @@ const Signin = () => {
                         
                     <div className="w-full flex flex-col items-center justify-center mt-[40px] gap-2">
                         <input type="submit" value="Sign in" className="px-10 py-2 bg-[#D82226] text-white font-bold text-[18px] rounded-[6px] hover:bg-[#d82225ee]" />
-                        <Link to="/newlog"><p className="text-[12px] font-semibold text-black hover:underline hover:duration-200">   Already an user !   </p></Link>
+                        <Link to="/"><p className="text-[12px] font-semibold text-black hover:underline hover:duration-200">   Already an user !   </p></Link>
                     </div>
 
                 </div>

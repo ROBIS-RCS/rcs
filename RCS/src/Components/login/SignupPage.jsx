@@ -1,67 +1,133 @@
-import React, { useState } from 'react';
-import './SignupPage.css';
+import Motherson from "../../../src/assets/Logo/Motherson.png"
+import {useState} from "react"
+import {Link} from "react-router-dom"
+import "./SignupPage.css"
 
-const SignupPage = () => {
-  const [enrollAs, setEnrollAs] = useState("employee");
-  const [username, setUsername] = useState('');
-  const [email, setEmail] = useState('');
-  const [password, setPassword] = useState('');
-  const [confirmPassword, setConfirmPassword] = useState('');
+//Icons
+import { IoIosEye } from "react-icons/io";  // Password Eye Open
+import { IoIosEyeOff } from "react-icons/io";  //Password Eyes Close
 
-  const handleEnrollAsChange = (event) => {
-    setEnrollAs(event.target.value);
-  };
 
-  const handleUsernameChange = (event) => {
-    setUsername(event.target.value);
-  };
+const Signin = () => {
+    const [show, setShow] = useState(false)
+    const [cShow, setCshow] = useState(false)
+    const [iconClr, setIconClr] = useState(false)
+    const [iconClr1, setIconClr1] = useState(false)
+    const [username, setUsername] = useState("")  //For Storing Username
+    const [password, setPassword] = useState("")  //For Storing Password
+    const [Cpassword, setCpassword] = useState("")  //For Storing Password
+    const [user, setUser] = useState("Employee")  //for storing the type of the Faculty / User
+    const [employee, setEmployee] = useState("")  //for Storing Employee IC
+    
 
-  const handleEmailChange = (event) => {
-    setEmail(event.target.value);
-  };
+    const getName = (e) => {
+        setUsername(e.target.value)
+        console.log(username)
+    }
 
-  const handlePasswordChange = (event) => {
-    setPassword(event.target.value);
-  };
+    const getPass = (e) => {
+        setPassword(e.target.value)
+        console.log(password)
+    }
 
-  const handleConfirmPasswordChange = (event) => {
-    setConfirmPassword(event.target.value);
-  };
+    const getUser = (e) => {
+        setUser(e.target.value)
+    }
+    
+    const getEmpID = (e) => {
+        setEmployee(e.target.value)
+    }
+
+    const getCpass = (e) => {
+        setCpassword(e.target.value)
+    }
+    const showPass = () => {
+        setShow(!show)
+    }
+
+    const showCpass = () => {
+        setCshow(!cShow)
+    }
+
+
+    const changeColor = () =>{
+        setIconClr(!iconClr)
+    }
+
+    const changeColor1 = () =>{
+        setIconClr1(!iconClr1)
+    }
+
+    const data = () => {
+        console.log({employee, user, username, password, Cpassword })
+    }
 
   return (
-    <form className='signup'>
-    <div className='body'>
-      
-                <svg height="46" viewBox="0 0 89 20" width="140" xmlns="http://www.w3.org/2000/svg"><title>Samvardhana Motherson</title><path d="M85.535 1.38a2.464 2.464 0 0 0-1.478 2.231v16.107h3.45c.817 0 1.479-.662 1.479-1.479V0zm-6.408 4.93a2.466 2.466 0 0 0-1.479 2.23v11.178h3.45a1.48 1.48 0 0 0 1.48-1.479V4.93zm-6.409 4.93a2.465 2.465 0 0 0-1.478 2.23v6.248h3.45c.817 0 1.479-.662 1.479-1.479V9.86zM.784 12.97h2.27v1.014c.356-.634 1.054-1.192 2.082-1.192.875 0 1.484.38 1.801 1.103.571-.774 1.358-1.103 2.195-1.103 1.256 0 2.17.811 2.17 2.475v4.338H9.031v-3.959c0-.671-.33-1.001-.85-1.001-.61 0-1.015.393-1.015 1.116v3.844H4.92v-3.959c0-.671-.33-1.001-.85-1.001-.609 0-1.015.393-1.015 1.116v3.844H.784zm16.241 3.362v-.101c0-1.117-.443-1.739-1.306-1.739-.85 0-1.32.597-1.32 1.713v.101c0 1.143.444 1.765 1.32 1.765.85 0 1.306-.636 1.306-1.74m-4.948.039v-.101c0-2.132 1.587-3.477 3.642-3.477 2.043 0 3.616 1.306 3.616 3.413v.101c0 2.158-1.586 3.452-3.629 3.452-2.042 0-3.629-1.243-3.629-3.388m8.26 1.104v-2.956h-.799V12.97h.8v-.467l2.271-.916v1.383h1.307v1.548h-1.307v2.74c0 .483.24.699.672.699.254 0 .444-.038.647-.114v1.724a4.73 4.73 0 0 1-1.256.19c-1.497 0-2.335-.723-2.335-2.283m4.51-6.757l2.27-.926v4.244c.356-.685 1.08-1.243 2.184-1.243 1.28 0 2.17.799 2.17 2.5v4.313h-2.272v-3.857c0-.748-.292-1.116-.952-1.116-.672 0-1.13.406-1.13 1.256v3.717h-2.27zm12.143 4.816c-.039-.8-.432-1.244-1.168-1.244-.685 0-1.154.444-1.269 1.244zm-4.759.837v-.101c0-2.132 1.586-3.477 3.59-3.477 1.815 0 3.377 1.04 3.377 3.426v.596h-4.67c.064.875.571 1.384 1.383 1.384.749 0 1.066-.343 1.155-.788h2.132c-.204 1.498-1.359 2.348-3.363 2.348-2.081 0-3.604-1.218-3.604-3.388zm7.833-3.4h2.271v1.319c.419-.99 1.116-1.422 2.144-1.407V15c-1.383-.038-2.144.393-2.144 1.458v3.147h-2.271zm4.772 4.53h2.093c.077.482.292.748.94.748.558 0 .811-.216.811-.545 0-.318-.317-.47-1.23-.597-1.776-.228-2.526-.749-2.526-2.131 0-1.473 1.308-2.183 2.843-2.183 1.637 0 2.778.558 2.931 2.145h-2.056c-.089-.445-.33-.66-.85-.66-.495 0-.749.215-.749.52 0 .317.305.444 1.117.545 1.84.229 2.728.71 2.728 2.132 0 1.573-1.167 2.284-3.007 2.284-1.89 0-2.995-.788-3.045-2.259m11.413-1.167v-.101c0-1.117-.444-1.739-1.307-1.739-.85 0-1.319.597-1.319 1.713v.101c0 1.143.444 1.765 1.32 1.765.85 0 1.306-.636 1.306-1.74m-4.949.039v-.101c0-2.132 1.586-3.477 3.642-3.477 2.043 0 3.616 1.306 3.616 3.413v.101c0 2.158-1.586 3.452-3.629 3.452S51.3 18.515 51.3 16.37m8.066-3.4h2.272v1.065c.355-.685 1.078-1.243 2.182-1.243 1.282 0 2.17.799 2.17 2.5v4.313h-2.27v-3.857c0-.748-.292-1.116-.952-1.116-.672 0-1.13.406-1.13 1.256v3.717h-2.27z" fill="#DA2020" fill-rule="evenodd"></path></svg>
+    <div className="w-[100vw] h-[100vh] flex items-center justify-center overflow-hidden bg-gradient-to-br from-white to-neutral-500">
+        <div className=" bg-[#F1F1F1] px-14 py-12 flex flex-col rounded-[25px] shadow-2xl">
+        {/* <button onClick={data}>Show data</button> */}
+            <form action="">
+                <div className="flex justify-end">
+                    <img src={Motherson} alt="" className="h-8 selection:none" draggable="false" />
+                </div>
+                <div className="flex mt-10">
+                    <p className=" text-black text-[32px] font-bold not-italic">SIGN UP</p>
+                </div>
+                <div className="w-full h-full mt-10">
+                    <div className="grid grid-cols-[2.5fr,1fr] gap-4">  {/* Emplotee ID */}
+                        <div className="w-full h-full relative items-center gap-3">
+                            <label htmlFor="EmployeeID" className={ employee ? "absolute left-[-5px] top-[-28px] px-2 font-bold rounded-[5px] duration-200 text-[16px] selection:none" : "absolute left-4 top-3 duration-200 text-[16px] selection:none select-none"}>Employee ID</label>
+                            <input type="text" placeholder="" name="employeeID" id="employeeID" className={`w-full outline-none py-3 text-[16px] px-4 border-b-2 rounded-md bg-transparent focus:bg-white ${employee && "bg-white"} focus:duration-200 border-black selection:none select-none`} onChange={getEmpID}/>
+                        </div>
+                        <select name="user" id="user" className="px-10 appearance-none rounded-[8px] outline-none text-[18px] font-bold tracking-wide text-[#D82226]" onClick={getUser}>   {/* User */}
+                            <option value="Employee" className="text-black font-semibold">Employee</option>
+                            <option value="Manager" className="text-black font-semibold">Manager</option>
+                            <option value="Admin" className="text-black font-semibold">Admin</option>
+                        </select>
 
-        <h1 className='signuphead'>Sign up</h1><br/>
-        <select className='enroll-as' value={enrollAs} onChange={handleEnrollAsChange}>
-          <option value="employee">Employee</option>
-          <option value="manager">Manager</option>
-          <option value="admin">Admin</option>
-        </select><br/>
-        <div className="input-wrapper">
-          <label className={username ? 'float-label' : ''}>Username</label>
-          <input className='signupusername' value={username} onChange={handleUsernameChange}></input>
-        </div><br/>
-        <div className="input-wrapper">
-          <label className={email ? 'float-label' : ''}>Email ID</label>
-          <input className='emailid' value={email} onChange={handleEmailChange}></input>
-        </div><br/>
-        <div className="input-wrapper">
-          <label className={password ? 'float-label' : ''}>Password</label>
-          <input type="password" className='signuppassword' value={password} onChange={handlePasswordChange}></input>
-        </div><br/>
-        <div className="input-wrapper">
-          <label className={confirmPassword ? 'float-label' : ''}>Confirm Password</label>
-          <input type="password" className='confirm-password' value={confirmPassword} onChange={handleConfirmPasswordChange}></input>
-        </div><br/>
-        <p className='Existing-User'>Existing User? <a href="/">Login</a></p> <br/>
-        <button className='signupSubmit'>Submit</button>
-      
+                        <div className="w-full h-full relative items-center gap-3 mt-7">   {/* Username */}
+                            <label htmlFor="username" className={username ? "absolute left-[-5px] top-[-28px] px-2 font-bold rounded-[5px] duration-200 text-[16px] selection:none" : "absolute left-4 top-3 duration-200 text-[16px] selection:none select-none"}>Username</label>
+                            <input type="text" placeholder="" name="username" id="username" className={`w-full outline-none py-3 text-[16px] px-4 border-b-2 rounded-md bg-transparent focus:bg-white ${username && "bg-white"} focus:duration-200 border-black selection:none select-none`} onChange={getName}/>
+                        </div>
+                        
+                    </div>
+
+                    <div className="mt-10 flex items-center relative ">  {/* Password */}
+                        <div className="w-full h-full relative items-center gap-3">
+                            <label htmlFor="password" className={password ? "absolute left-[-5px] top-[-28px] px-2 font-bold rounded-[5px] duration-200 text-[16px] selection:none" : "absolute left-4 top-3 duration-200 text-[16px] selection:none select-none"}>Password</label>
+                            <input type={show ? "text" : "password"} placeholder="" name="password" id="password" className={`w-full outline-none py-3 text-[16px] px-4 border-b-2 rounded-md bg-transparent focus:bg-white ${password && "bg-white"} focus:duration-200 border-black select-none`} onChange={getPass}/>
+                        </div>
+                        <span onClick={showPass} className="px-5 py-[11px] cursor-pointer duration-300 absolute right-0" onMouseEnter={changeColor} onMouseLeave={changeColor}>
+                            {show ? <IoIosEyeOff size={27} color={iconClr && "#D82226"}/> : <IoIosEye size={27} color={iconClr && "#D82226"}/>}
+                        </span>
+                    </div>
+
+                    <div className="mt-10 flex items-center relative ">  {/* Confirm Password */}
+                        <div className="w-full h-full relative items-center gap-3">
+                            <label htmlFor="Cpassword" className={Cpassword ? "absolute left-[-5px] top-[-28px] px-2 font-bold rounded-[5px] duration-200 text-[16px] selection:none" : "absolute left-4 top-3 duration-200 text-[16px] selection:none select-none"}>Confirm Password</label>
+                            <input type={cShow ? "text" : "password"} placeholder="" name="Cpassword" id="Cpassword" className={`w-full outline-none py-3 text-[16px] px-4 border-b-2 rounded-md bg-transparent focus:bg-white ${password && "bg-white"} ${(password != Cpassword) ? "border-1 border-red-600" : "border-black"} focus:duration-200  select-none`} onChange={getCpass}/>
+                        </div>
+                        <span onClick={showCpass} className="px-5 py-[11px] cursor-pointer duration-300 absolute right-0" onMouseEnter={changeColor1} onMouseLeave={changeColor1}>
+                            {cShow ? <IoIosEyeOff size={27} color={iconClr1 && "#D82226"}/> : <IoIosEye size={27} color={iconClr1 && "#D82226"}/>}
+                        </span>
+                    </div>
+
+                    <span className={(password != Cpassword) ? "visible duration-200" : "invisible duratiton-200"}>   {/* Password */}
+                        <Link>
+                            <p className="text-[#D82226] hover:text-black hover:underline hover:duration-200 text-[14px] pt-1 text-right">Invalid Password</p>
+                        </Link>
+                    </span>
+                        
+                    <div className="w-full flex flex-col items-center justify-center mt-[40px] gap-2">
+                        <input type="submit" value="Sign in" className="px-10 py-2 bg-[#D82226] text-white font-bold text-[18px] rounded-[6px] hover:bg-[#d82225ee]" />
+                        <Link to="/"><p className="text-[12px] font-semibold text-black hover:underline hover:duration-200">   Already an user !   </p></Link>
+                    </div>
+                </div>
+            </form>
+        </div>
     </div>
-    </form>
-  );
-};
+    
+  )
+}
 
-export default SignupPage;
+export default Signin
