@@ -12,7 +12,7 @@ const DropDown = ({ title, optionsArray, icon }) => {
   return (
     <div className="w-full py-2 px-5 flex flex-col items-center justify-center">
       <div
-        className="w-[calc(100%+40px)] px-3 py-4 flex justify-between items-center bg-[#000] duration-200 hover:bg-[#1d1d1d] hover:rounded-[5px]" 
+        className="w-[calc(100%+40px)] px-3 py-4 flex justify-between items-center bg-[#000] duration-200 hover:bg-[#1d1d1d] hover:rounded-[5px] cursor-pointer" 
         onClick={toggleArrow}
       >
         <span className="flex items-center justify-left gap-5">

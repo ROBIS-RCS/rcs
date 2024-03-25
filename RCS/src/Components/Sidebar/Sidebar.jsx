@@ -2,6 +2,7 @@ import React from 'react'
 import MothersonS from "../../assets/Logo/MOTHERSON_white.png"
 import DropDown from './DropDown'
 import "./hoverAnim.css"
+import {Link} from "react-router-dom"
 
 import { IoCarOutline } from "react-icons/io5";  //Vehicle
 import { AiFillWarning } from "react-icons/ai";  //AGV Breakdown
@@ -165,9 +166,9 @@ const Sidebar = () => {
                     <p className='flex text-[14px] font-semibold text-[#888] hover:text-white duration-200'>User Designation</p>
                 </span>
             </div>
-            <div className='p-3 rounded-full bg-red-600 hover:bg-red-500' title='Logout'>
+            <Link to="/"><div className='p-3 rounded-full bg-red-600 hover:bg-red-500' title='Logout'>
                 <MdLogout size={22} color="white"/>
-            </div>
+            </div></Link>
         </div>
         <div className='w-[calc(100%-30px)]  flex flex-col items-center justify-center p-3 bg-black rounded-[10px]'>
           <DropDown title={"System"} optionsArray={dataSystem} icon={<FaDesktop size={25}  color="white" />} />
