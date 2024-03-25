@@ -7,3 +7,48 @@ body {
     padding: 0px;
     margin: 0px;
 }
+
+
+/* animation for DropDown */
+
+.animation-show {
+    animation: scaleShow 300ms ease-in-out forwards linear;
+    transform-origin: top center
+}
+
+.animation-hidden {
+    animation: scaleHide 300ms ease-in-out forwards linear;
+    transform-origin: top center
+}
+
+@keyframes scaleShow {
+    0% {
+        transform: scalex(0);
+        display: hidden;
+    }
+    80% {
+        transform: scaleY(1.1);
+        display: block;
+    }
+    100% {
+        transform: scaleY(1)
+    }
+}
+
+@keyframes scaleHide {
+    0% {
+        transform: scaleY(1);
+        display: block;
+    }
+    80% {
+        transform: scaleY(1.1);
+        display:hidden
+    }
+    100% {
+        transform: scaleY(0);
+        display: hidden;
+
+    }
+}
+
+

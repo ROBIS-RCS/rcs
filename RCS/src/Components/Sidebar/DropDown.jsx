@@ -32,8 +32,8 @@ const DropDown = ({ title, optionsArray, icon }) => {
       <div
         className={
           clicked
-            ? "w-[calc(100%+40px)] flex h-full duration-300 rounded-b-[10px]"
-            : "h-0 w-0 hidden duration-300 "
+            ? "w-[calc(100%+40px)] animaton-show h-full duration-300 rounded-b-[10px]"
+            : "h-0 w-0 animation-hidden hidden duration-300 "
         }
       >
         <div className="w-full h-full bg-[#282828] p-2 grid gap-2 rounded-[6px]">

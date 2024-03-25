@@ -35,11 +35,11 @@ const dataRCS = [
       logo:<IoCarOutline size={25} color="white"/>,
       path:"/",
   },
-  {
-      name:"AGV Breakdown",
-      logo:<AiFillWarning size={25} color="white"/>,
-      path:"/",
-  },
+//   {
+//       name:"AGV Breakdown",
+//       logo:<AiFillWarning size={25} color="white"/>,
+//       path:"/",
+//   },
   {
       name:"Stat Utilization",
       logo:<ImStatsDots size={25} color="white"/>,
@@ -56,7 +56,7 @@ const dataRCS = [
       path:"/",
   },
   {
-      name:"District",
+      name:"Region",
       logo:<MdOutlineLocationCity size={25} color="white"/>,
       path:"/",
   },
@@ -75,11 +75,11 @@ const dataRCS = [
       logo:<ImStatsBars size={25} color="white"/>,
       path:"/",
   },
-  {
-      name:"Current Order",
-      logo:<TiSpanner size={25} color="white"/>,
-      path:"/",
-  },
+//   {
+//       name:"Current Order",
+//       logo:<TiSpanner size={25} color="white"/>,
+//       path:"/",
+//   },
   {
       name:"Order",
       logo:<GrUserWorker size={25} color="white"/>,
@@ -154,7 +154,7 @@ const dataMS =[
 ]
 const Sidebar = () => {
     return (
-      <div className='w-[20%] h-screen bg-[#911515] duration-500ms flex items-center justify-start flex-col gap-2.5 pb-10 hoverShowSideBar overflow-y-scroll '>
+      <div className='w-[350px] h-screen bg-[#911515] duration-500ms flex items-center justify-start flex-col gap-2.5 pb-10 hoverShowSideBar overflow-y-scroll '>
         <div className='w-[calc(100%-30px)] drop-shadow-2xl flex items-center justify-start px-2 py-5'>
             <img src={MothersonS} alt="" className='w-[200px]'/>
         </div>

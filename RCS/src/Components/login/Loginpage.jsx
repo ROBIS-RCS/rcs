@@ -75,7 +75,7 @@ const Login = () => {
                         
                     <div className="w-full flex flex-col items-center justify-center mt-[70px] gap-2">
                         <input type="submit" value="Login" className="px-10 py-2 bg-[#D82226] text-white font-bold text-[18px] rounded-[6px] hover:bg-[#d82225ee]" />
-                        <Link to="/signup">
+                        <Link to="/home">
   <p className="text-[12px] font-semibold text-black hover:underline hover:duration-200">Create new user?</p>
 </Link>
                     </div>
