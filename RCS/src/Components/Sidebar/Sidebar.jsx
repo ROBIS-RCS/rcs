@@ -2,7 +2,6 @@ import React from 'react'
 import MothersonS from "../../assets/Logo/MOTHERSON_white.png"
 import DropDown from './DropDown'
 import "./hoverAnim.css"
-// import dataRCS from './dataRCS'
 
 import { IoCarOutline } from "react-icons/io5";  //Vehicle
 import { AiFillWarning } from "react-icons/ai";  //AGV Breakdown
@@ -152,7 +151,7 @@ const dataMS =[
 ]
 const Sidebar = () => {
     return (
-      <div className='w-[20%] h-100% bg-[#911515] duration-500ms flex items-center justify-start flex-col gap-5 pb-10 hoverShowSideBar'>
+      <div className='w-[20%] h-screen bg-[#911515] duration-500ms flex items-center justify-start flex-col gap-5 pb-10 hoverShowSideBar relative'>
         <div className='w-[200px] py-1 px-1 rounded-tl-[60px] rounded-br-[60px] drop-shadow-2xl  flex items-center justify-left '>
             <img src={MothersonS} alt="" className='w-[200px]'/>
         </div>
@@ -161,7 +160,7 @@ const Sidebar = () => {
           <DropDown title={"RCS"} optionsArray={dataRCS} icon={<FaLocationCrosshairs size={25} color="white" />} />
           <DropDown title={"Monitoring System"} optionsArray={dataMS} icon={<ImStatsDots size={25} color="white" />} />
         </div>
-        <a href="/" class="subpixel-antialiased text-20px text-white "> Login</a>
+        <a href="/" class="subpixel-antialiased text-20px text-white absolute bottom-10  "> Login</a>
       </div>
     );
   };
