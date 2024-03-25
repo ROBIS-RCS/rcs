@@ -25,6 +25,8 @@ import { FaDesktop } from "react-icons/fa";
 import { IoGitNetworkSharp } from "react-icons/io5";
 import { FaMapMarkedAlt } from "react-icons/fa";
 
+import { MdLogout } from "react-icons/md"; //Log out
+
 
 const dataRCS = [
   {
@@ -151,16 +153,27 @@ const dataMS =[
 ]
 const Sidebar = () => {
     return (
-      <div className='w-[20%] h-screen bg-[#911515] duration-500ms flex items-center justify-start flex-col gap-5 pb-10 hoverShowSideBar relative'>
-        <div className='w-[200px] py-1 px-1 rounded-tl-[60px] rounded-br-[60px] drop-shadow-2xl  flex items-center justify-left '>
+      <div className='w-[20%] h-screen bg-[#911515] duration-500ms flex items-center justify-start flex-col gap-2.5 pb-10 hoverShowSideBar overflow-y-scroll '>
+        <div className='w-[calc(100%-30px)] drop-shadow-2xl flex items-center justify-start px-2 py-5'>
             <img src={MothersonS} alt="" className='w-[200px]'/>
         </div>
-        <div className='w-[calc(100%-30px)]  flex flex-col items-center justify-center p-3 bg-[#EEEEEE] rounded-[10px]'>
+        <div className='w-[calc(100%-30px)] h-auto bg-black px-5 py-5 flex items-center justify-between rounded-[12px]'> {/* User Profile */}
+            <div className='w-full flex items-center gap-3' >
+                <img src="" alt="" className='p-7 rounded-full bg-[#888888]' />
+                <span>
+                    <p className='flex text-[18px] font-bold text-white hover:text-red-600 duration-200'>Username</p>
+                    <p className='flex text-[14px] font-semibold text-[#888] hover:text-white duration-200'>User Designation</p>
+                </span>
+            </div>
+            <div className='p-3 rounded-full bg-red-600 hover:bg-red-500' title='Logout'>
+                <MdLogout size={22} color="white"/>
+            </div>
+        </div>
+        <div className='w-[calc(100%-30px)]  flex flex-col items-center justify-center p-3 bg-black rounded-[10px]'>
           <DropDown title={"System"} optionsArray={dataSystem} icon={<FaDesktop size={25}  color="white" />} />
           <DropDown title={"RCS"} optionsArray={dataRCS} icon={<FaLocationCrosshairs size={25} color="white" />} />
           <DropDown title={"Monitoring System"} optionsArray={dataMS} icon={<ImStatsDots size={25} color="white" />} />
         </div>
-        <a href="/" class="subpixel-antialiased text-20px text-white absolute bottom-10  "> Login</a>
       </div>
     );
   };

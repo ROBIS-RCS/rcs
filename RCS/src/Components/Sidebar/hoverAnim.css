@@ -14,3 +14,9 @@
     gap:10px;
     justify-content: left;
 }
+
+
+.hoverShowSideBar::-webkit-scrollbar {
+    width: 0px;
+    background-color: transparent;
+}

@@ -12,7 +12,7 @@ const DropDown = ({ title, optionsArray, icon }) => {
   return (
     <div className="w-full py-2 px-5 flex flex-col items-center justify-center">
       <div
-        className="w-[calc(100%+40px)] px-1 py-1 flex justify-between items-center bg-[#8C8888] rounded-[10px]"
+        className="w-[calc(100%+40px)] px-3 py-4 flex justify-between items-center bg-[#000] duration-200 hover:bg-[#1d1d1d] hover:rounded-[5px]" 
         onClick={toggleArrow}
       >
         <span className="flex items-center justify-left gap-5">
@@ -32,14 +32,14 @@ const DropDown = ({ title, optionsArray, icon }) => {
       <div
         className={
           clicked
-            ? "w-[calc(100%+40px)] h-full scale-1 origin-top-left visible duration-300 rounded-[10px]"
-            : "origin-top-left invisible h-0 w-0 scale-0 duration-300 rounded-[10px]"
+            ? "w-[calc(100%+40px)] flex h-full duration-300 rounded-b-[10px]"
+            : "h-0 w-0 hidden duration-300 "
         }
       >
-        <div className="w-full h-full bg-[#8C8888] rounded-[15px]">
+        <div className="w-full h-full bg-[#282828] p-2 grid gap-2 rounded-[6px]">
           {optionsArray?.map((option, key) => (
             <Link key={key} to={option.path}>
-              <span className="w-full p-3 rounded hover:bg-[#2f2f2f] duration-500 flex items-center  justify-left gap-2">
+              <span className="w-full p-3 rounded hover:bg-[#494949] hover:rounded-[5px] duration-500 flex items-center justify-left gap-2">
                 {option.logo}
                 <p className="text-[18px] font-sans text-white">
                   {option.name}
