@@ -8,10 +8,10 @@ const particlesConfig =
 
     fullScreen: {
         enable: false,
-        zIndex: 1,
+        zIndex: -1,
     },
    
-    fpsLimit: 60,
+    fpsLimit: 45,
     interactivity: {
         events: {
             onClick: {
@@ -48,7 +48,7 @@ const particlesConfig =
 
         },
         collisions: {
-            enable: false,
+            enable: true,
         },
         move: {
             direction: "none",
@@ -56,19 +56,19 @@ const particlesConfig =
             outModes: {
                 default: "bounce",
             },
-            random: false,
-            speed: 0.5,
+            random: true,
+            speed: 3,
             straight: false,
         },
         number: {
             density: {
-                enable: true,
+                enable: false,
                 area: 800,
             },
-            value: 30,
+            value: 50,
         },
         opacity: {
-            value: 2,
+            value: 1,
         },
 
         style: {
@@ -78,7 +78,7 @@ const particlesConfig =
          "type": "polygon",
          "stroke": {
            "width": 1,
-           "color": "#911215"
+           "color": "#eee"
          },
          "polygon": {
            "nb_sides": 8
@@ -91,7 +91,7 @@ const particlesConfig =
        },
         size: {
             random: true,
-            value: 100,
+            value: 50,
 
         },
     },
