@@ -5,7 +5,7 @@ import welcomeMotherson from "../../assets/images/RCS.png"
 const Welcome = () => {
   return (
     <div className="w-full h-full flex p-10 relative">
-        <p className='text-[60px] h-auto flex w-[380px]  origin-top font-bold hover:text-[#911515]'>
+        <p className='text-[62px] h-auto flex w-[380px]  origin-top font-bold hover:text-[#911515]'>
         <Typewriter
             options={{
               strings: ["   Welcome to robis-RCS...    "],
