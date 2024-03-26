@@ -17,7 +17,7 @@ const particlesConfig = {
           "color": "#ff6666"
         },
         "polygon": {
-          "nb_sides": 6
+          "nb_sides": 4
         },
         "image": {
           "src": "img/github.svg",
@@ -26,7 +26,7 @@ const particlesConfig = {
         }
       },
       "opacity": {
-        "value": 0.6,
+        "value": 0.2,
         "random": true,
         "anim": {
           "enable": true,
@@ -36,7 +36,7 @@ const particlesConfig = {
         }
       },
       "size": {
-        "value": 50,
+        "value": 30,
         "random": true,
         "anim": {
           "enable": false,
@@ -91,7 +91,7 @@ const particlesConfig = {
           "size": 40,
           "duration": 2,
           "opacity": 8,
-          "speed": 3
+          "speed": 2
         },
         "repulse": {
           "distance": 150
@@ -109,7 +109,7 @@ const particlesConfig = {
       "hide_card": true,
       "background_color": "#b61924",
       "background_image": "",
-      "background_position": "0% 0%",
+      "background_position": "10% 0%",
       "background_repeat": "no-repeat",
       "background_size": "cover"
     }

@@ -9,10 +9,13 @@ const Welcome = () => {
       
       <div className="w-full h-full flex p-10 relative">
         <div className='absolute top-20 '>
-          <Particle/>
+          
         </div>
         
           <p className='text-[62px] h-auto flex w-[380px]  origin-top font-bold hover:text-[#911515]'>
+          <Particle
+          
+          />
           <Typewriter
               options={{
                 strings: ["   Welcome to robis-RCS...    "],
