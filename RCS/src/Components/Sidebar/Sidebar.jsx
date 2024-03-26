@@ -3,6 +3,7 @@ import MothersonS from "../../assets/Logo/MOTHERSON_white.png"
 import DropDown from './DropDown'
 import "./hoverAnim.css"
 import {Link} from "react-router-dom"
+import NotificationBar from "./NotificationBar"
 
 import { IoCarOutline } from "react-icons/io5";  //Vehicle
 import { AiFillWarning } from "react-icons/ai";  //AGV Breakdown
@@ -24,11 +25,9 @@ import { MdError } from "react-icons/md";
 import { FaLocationCrosshairs } from "react-icons/fa6";
 import { FaUserCircle } from "react-icons/fa";
 import { FaUserCog } from "react-icons/fa";
-import { FaLanguage } from "react-icons/fa";
 import { FaDesktop } from "react-icons/fa";
 import { IoGitNetworkSharp } from "react-icons/io5";
 import { FaMapMarkedAlt } from "react-icons/fa";
-
 import { MdLogout } from "react-icons/md"; //Log out
 
 
@@ -187,23 +186,8 @@ const Sidebar = (props) => {
             </div>
         </div>
 
-        <div className='w-[calc(100%-30px)] h-auto bg-black px-5 py-5 grid grid-cols-3 items-center justify-between rounded-[12px] '> {/* Notification and Others */}
-            <div className='w-full h-full flex items-center justify-center gap-1 border-r-2 duration-200 realtive titleShow'>
-                <IoNotifications size={25} color='white'/>
-                <p className='px-1.5 py-0.5 text-white font-semibold bg-red-600 rounded-full duration-300'>10</p>
-                <p className='absolute px-3 py-1 bg-[#00000045] text-white font-semibold text-[14px] translate-x-[-7px] translate-y-8 titleText invisible'>Notification</p>
-            </div>
+        <NotificationBar/>
 
-            <div className='w-full h-full flex items-center justify-center gap-1 border-r-2 duration-200 realtive titleShow'>
-                <FaUserCircle size={25} color="white"/>
-                <p className='absolute px-3 py-1 bg-[#00000045] text-white font-semibold text-[14px] translate-y-8 titleText invisible'>Users</p>
-            </div>
-
-            <div className='w-full h-full flex items-center justify-center gap-1  duration-200 realtive titleShow'>
-                <LuLanguages size={25} color='white'/>
-                <p className='absolute px-3 py-1 bg-[#00000045] text-white font-semibold text-[14px] translate-x-2 translate-y-8 titleText invisible'>Languages</p>
-            </div>
-        </div>
         <div className='w-[calc(100%-30px)]  flex flex-col items-center justify-center p-3 bg-black rounded-[10px]'>
           {/* <DropDown title={"System"} optionsArray={dataSystem} icon={<FaDesktop size={25}  color="white" />} /> */}
           <DropDown title={"RCS"} optionsArray={dataRCS} icon={<FaLocationCrosshairs size={25} color="white" />} />
