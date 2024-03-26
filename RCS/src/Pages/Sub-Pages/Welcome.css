@@ -1,0 +1,38 @@
+.container {
+    display: flex;
+    justify-content: center; /* Horizontally center the content */
+    align-items: center; /* Vertically center the content */    
+  }
+.heading{
+    font:40px sans-serif ;
+    font-weight: 600;
+    color: #ffffff;
+    margin-left: 10px; /* Adjust this value as needed for spacing */
+    display: inline-block;
+    vertical-align: middle;
+    filter: drop-shadow(15px 5px 5px rgba(65, 64, 64, 0.427));
+    padding-left: 5px;
+}
+.logo1{
+    height: 60px;
+    width: 60px;
+    display: inline-block;
+    padding-left: 10px;
+}
+.RCSimg{
+    height: 350px;
+    width: 350px;
+    display: inline-block; /* Ensures both image and text are inline */
+    vertical-align: middle; /* Aligns the image vertically with the text */
+    filter: drop-shadow(15px 5px 5px rgba(65, 64, 64, 0.427));
+}
+.hr{
+    border-radius: 10px;
+    background-color: rgba(93, 92, 92, 0.638);
+    box-shadow: 0px 0px 10px black; /* Corrected the box-shadow value */
+    width: 900px;
+}
+.heading:hover{
+    color: #911515;
+    filter: drop-shadow( 0px 0px 10px rgb(255, 255, 255));
+}
