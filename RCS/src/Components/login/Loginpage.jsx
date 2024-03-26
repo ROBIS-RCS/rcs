@@ -8,7 +8,7 @@ import { IoIosEye } from "react-icons/io";  // Password Eye Open
 import { IoIosEyeOff } from "react-icons/io";  //Password Eyes Close
 
 
-const Login = () => {
+const Login = (props) => {
     const [show, setShow] = useState(false)
     const [iconClr, setIconClr] = useState(false)
     const [username, setUsername] = useState("")  //For Storing Username
@@ -36,10 +36,16 @@ const Login = () => {
         setIconClr(!iconClr)
     }
 
+    const comparator = () => {
+        if(username === "admin" & password === "admin"){
+            return props.setLog(!props.log);
+        }
+    }
+
   return (
     <div className="w-[100vw] h-[100vh] flex items-center justify-center overflow-hidden bg-gradient-to-br from-white to-neutral-500">
         <div className="w-[680px] h-[580px] bg-[#F1F1F1] px-14 py-12 flex flex-col rounded-[25px]">
-            <form action="">
+            {/* <form action=""> */}
                 <div className="flex justify-end">
                     <img src={Motherson} alt="" className="h-8" />
                 </div>
@@ -74,14 +80,14 @@ const Login = () => {
                     </span>
                         
                     <div className="w-full flex flex-col items-center justify-center mt-[70px] gap-2">
-                        <input type="submit" value="Login" className="px-10 py-2 bg-[#D82226] text-white font-bold text-[18px] rounded-[6px] hover:bg-[#d82225ee]" />
+                        <button className="px-10 py-2 bg-[#D82226] text-white font-bold text-[18px] rounded-[6px] hover:bg-[#d82225ee]" onClick={comparator}>Login</button>
                         <Link to="/home">
-  <p className="text-[12px] font-semibold text-black hover:underline hover:duration-200">Create new user?</p>
-</Link>
+                            <p className="text-[12px] font-semibold text-black hover:underline hover:duration-200">Create new user?</p>
+                        </Link>
                     </div>
 
                 </div>
-            </form>
+            {/* </form> */}
         </div>
     </div>
     

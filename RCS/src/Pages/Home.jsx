@@ -1,18 +1,15 @@
 import Sidebar from "../Components/Sidebar/Sidebar"
-import {Routes, Route} from "react-router-dom"
+import {Routes, Route, Outlet} from "react-router-dom"
 import Welcome from "./Sub-Pages/Welcome"
 
 
-const Home = () => {
+const Home = ({log, setLog}) => {
   return (
     <div className="w-full h-full flex">
-           <Sidebar/> 
+           <Sidebar log={log} setLog={setLog}/> 
         <div className="w-[calc(100%-350px)] p-2">
             <div className="w-full bg-[#FFFFFFC0] p-20 rounded-[20px]">
-                <Routes>
-                    <Route path="/welcome" element={<Welcome/>}></Route>
-                    <Route ></Route>
-                </Routes>
+                <Outlet/>
             </div>
         </div>
         

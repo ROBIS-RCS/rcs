@@ -101,7 +101,7 @@ const dataSystem =[
     {
         name:"Users",
         logo:<FaUserCircle size={25} color="white"/>,
-        path:"/",
+        path:"/users",
     },
     {
         name:"Roles",
@@ -152,11 +152,18 @@ const dataMS =[
         path:"/",
     },
 ]
-const Sidebar = () => {
+const Sidebar = (props) => {
+
+    const LogOut = () => {
+        props.setLog(!props.log);
+        console.log("logout")
+    }
+
+
     return (
       <div className='w-[350px] h-screen bg-[#911515] duration-500ms flex items-center justify-start flex-col gap-2.5 pb-10 hoverShowSideBar overflow-y-scroll '>
         <div className='w-[calc(100%-30px)] drop-shadow-2xl flex items-center justify-start px-2 py-5'>
-            <img src={MothersonS} alt="" className='w-[200px]'/>
+            <Link to="/welcome"><img src={MothersonS} alt="" className='w-[200px]'/></Link>
         </div>
         <div className='w-[calc(100%-30px)] h-auto bg-black px-5 py-5 flex items-center justify-between rounded-[12px]'> {/* User Profile */}
             <div className='w-full flex items-center gap-3' >
@@ -166,9 +173,9 @@ const Sidebar = () => {
                     <p className='flex text-[14px] font-semibold text-[#888] hover:text-white duration-200'>User Designation</p>
                 </span>
             </div>
-            <Link to="/"><div className='p-3 rounded-full bg-red-600 hover:bg-red-500' title='Logout'>
+            <div className='p-3 rounded-full bg-red-600 hover:bg-red-500' title='Logout' onClick={LogOut}>
                 <MdLogout size={22} color="white"/>
-            </div></Link>
+            </div>
         </div>
         <div className='w-[calc(100%-30px)]  flex flex-col items-center justify-center p-3 bg-black rounded-[10px]'>
           <DropDown title={"System"} optionsArray={dataSystem} icon={<FaDesktop size={25}  color="white" />} />

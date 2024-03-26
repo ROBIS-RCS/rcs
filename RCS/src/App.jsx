@@ -8,19 +8,22 @@ import Signin from './Components/login/NewSiginup/Signin'
 import { supabase } from '../server/createClient';
 import Login from './Components/login/NewLogin/Login';
 import Home from './Pages/Home';
+import Welcome from './Pages/Sub-Pages/Welcome';
+import Users from './Pages/Sub-Pages/Users';
 
 function App() {
+  const [logged, setLogged] = useState(false)
   return (
-    <div className='w-full h-full p-0 m-0'>
-      <Router>   
-        <Routes location={location} key={location.pathname}>
-          <Route path='/' element={<Loginpage />} />
-          <Route path='/signup' element={<SignupPage />} />
-          <Route path='/home' element={<Home/>}></Route>    
-        </Routes>
+    <div className='w-full h-full p-0 m-0 flex items-center justify-between gap-5'>
+        <Router>   
+          <Routes location={location} key={location.pathname}>
+            <Route path='/' element={logged ? <Home log={logged} setLog={setLogged} /> :<Loginpage log={logged} setLog={setLogged}/>} >
+              <Route index path='/welcome' element={<Welcome/>}/>
+              <Route path="/users" element={<Users/>}/>
+            </Route> 
+            
+          </Routes>
       </Router>
-
-
     </div>
   );
 }
