@@ -8,6 +8,13 @@ body {
     margin: 0px;
 }
 
+/* Title Hover Animation */
+.titleShow:hover .titleText {
+    visibility: visible;
+    transition: 300ms ease-in-out ;
+}
+
+
 
 /* animation for DropDown */
 
