@@ -17,6 +17,7 @@ function App() {
     <div className='w-full h-full p-0 m-0 flex items-center justify-between gap-5'>
         <Router>   
           <Routes location={location} key={location.pathname}>
+            <Route path='/signup' element={<SignupPage/>}></Route>
             <Route path='/' element={logged ? <Home log={logged} setLog={setLogged} /> :<Loginpage log={logged} setLog={setLogged}/>} >
               <Route index path='/welcome' element={<Welcome/>}/>
               <Route path="/users" element={<Users/>}/>

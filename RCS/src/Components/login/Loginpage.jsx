@@ -81,7 +81,7 @@ const Login = (props) => {
                         
                     <div className="w-full flex flex-col items-center justify-center mt-[70px] gap-2">
                         <button className="px-10 py-2 bg-[#D82226] text-white font-bold text-[18px] rounded-[6px] hover:bg-[#d82225ee]" onClick={comparator}>Login</button>
-                        <Link to="/home">
+                        <Link to="/signup">
                             <p className="text-[12px] font-semibold text-black hover:underline hover:duration-200">Create new user?</p>
                         </Link>
                     </div>

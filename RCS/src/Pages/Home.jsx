@@ -7,8 +7,8 @@ const Home = ({log, setLog}) => {
   return (
     <div className="w-full h-full flex">
            <Sidebar log={log} setLog={setLog}/> 
-        <div className="w-[calc(100%-350px)] p-2">
-            <div className="w-full bg-[#FFFFFFC0] p-20 rounded-[20px]">
+        <div className="w-[calc(100%-350px)] h-screen p-2 shadow-2xl">
+            <div className="w-full bg-[#FFFFFFC0] h-full p-5 rounded-[20px]">
                 <Outlet/>
             </div>
         </div>
