@@ -1,15 +1,14 @@
 import './Welcome.css'
 import RCSImage from "../../../src/assets/images/RCS.png";
-import logo1 from "../../../src/assets/Logo/redlogo.png"
+import logo1 from "../../../src/assets/Logo/Motherson.png"
 const Welcome = () => {
   return (
-    <div className='container'>
-        <div className='hr'> 
-          <img src={RCSImage} alt="RCS AGV"  className='RCSimg'/>
-          <img src={logo1} alt="logo1"  className='logo1'/>          
-          <p className="heading">Welcome to robis RCS </p>
-       
-        </div>     
+    <div >       
+          <img src={RCSImage} alt="RCS AGV"  className='RCSimg'/>  
+          <div className='wel'> 
+          <img src={logo1} alt="logo1"  className='logo1'/>  <br/> 
+          <p className='font'> Welcome to robis RCS</p>
+          </div>              
     </div>
   )
 }
