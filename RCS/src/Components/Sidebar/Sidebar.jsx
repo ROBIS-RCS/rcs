@@ -160,7 +160,6 @@ const dataMS =[
     // },
 ]
 const Sidebar = (props) => {
-
     const LogOut = () => {
         props.setLog(!props.log);
         console.log("logout")
