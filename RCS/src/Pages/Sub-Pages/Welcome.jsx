@@ -2,6 +2,9 @@ import Typewriter from 'typewriter-effect';
 import Mlogo from '../../assets/Logo/redlogo.png'
 import welcomeMotherson from "../../assets/images/RCS.png"
 import Particle from '../../Components/ParticleJS/Particle';
+import Slideshow from '../../Components/Slideshow/Slideshow.jsx';
+import GIF from "../../assets/GIF/www.gif"
+
 const Welcome = () => {
   return (
     <div className='w-full h-full realtive'>
@@ -20,9 +23,10 @@ const Welcome = () => {
                 loop: true,
               }}
           />
-          </p>
-          <img src={welcomeMotherson} alt="" className='absolute w-[650px] bottom-[-10px] right-[-10px] drop-shadow-lg ' />
-          <img src={Mlogo} alt="" className='absolute w-[50px] top-[10px] right-[10px] drop-shadow-lg' />          
+          </p>          
+          <img src={Mlogo} alt="" className='absolute w-[50px] top-[10px] right-[10px] drop-shadow-lg' /> 
+                   
+          <Slideshow />
       </div>
       </div>     
     </div>
