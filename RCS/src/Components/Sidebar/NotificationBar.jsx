@@ -19,7 +19,7 @@ const dataNB = [
     },
     {
         title: "Language",
-        icon: <IoNotifications size={25} color='white'/>,
+        icon: <LuLanguages size={25} color='white'/>,
         isNotification: false,
         path:"/language"
     },
