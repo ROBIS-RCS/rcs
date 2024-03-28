@@ -16,7 +16,7 @@
   }
   .slideshowSlider {
     display: flex;
-    transition: transform 0.8s ease;
+    transition: transform 1s ease;
   }
   
   .slide {
