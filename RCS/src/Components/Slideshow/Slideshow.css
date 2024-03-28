@@ -11,7 +11,7 @@
     
   }
   .slideshow-container:hover{
-    background-color: #8d89891f;
+   
     color:  #911515;
   }
   .slideshowSlider {
@@ -28,11 +28,11 @@
   
   .slideshowArrows {
     position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
+    bottom: 10%;
+    left: 30%;
     display: flex;
     justify-content: space-between;
-    width: 100%;
+    width: 20%;
   }
   
   .slideshowArrows div {
@@ -40,7 +40,7 @@
     height: 30px;
     background-color: rgba(255, 255, 255, 0.216);
     border-radius: 20px;
-    color: #000;
+    color: #65606058;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -51,5 +51,6 @@
   
   .slideshowArrows div:hover {
     background-color: rgba(255, 255, 255, 0.8);
+    color: #0e0e0efc;
   }
   
