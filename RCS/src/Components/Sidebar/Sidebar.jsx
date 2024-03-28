@@ -35,12 +35,12 @@ const dataRCS = [
   {
       name:"Vehicle",
       logo:<IoCarOutline size={25} color="white"/>,
-      path:"/",
+      path:"/Vehicle",
   },
   {
     name:"Maintenance",
     logo:<GrVmMaintenance size={25} color="white"/>,
-    path:"/",
+    path:"/Maintenance",
 },
 //   {
 //       name:"AGV Breakdown",
@@ -50,37 +50,37 @@ const dataRCS = [
   {
       name:"Stat Utilization",
       logo:<ImStatsDots size={25} color="white"/>,
-      path:"/",
+      path:"/Stat_Utilization",
   },
   {
       name:"Task Parameters",
       logo:<FaTasks size={25} color="white"/>,
-      path:"/",
+      path:"/Task_Parameters",
   },
   {
       name:"Order Processing",
       logo:<HiMiniCpuChip size={25} color="white"/>,
-      path:"/",
+      path:"/Order_Processing",
   },
   {
       name:"Region",
       logo:<MdOutlineLocationCity size={25} color="white"/>,
-      path:"/",
+      path:"/Region",
   },
   {
       name:"Storage Bin",
       logo:<GrStorage size={25} color="white"/>,
-      path:"/",
+      path:"/Storage_Bin",
   },
   {
       name:"Storage Bin Status",
       logo:<FaNetworkWired size={25} color="white"/>,
-      path:"/",
+      path:"/Storage_Bin_Status",
   },
   {
       name:"Storage Bin Statistics",
       logo:<ImStatsBars size={25} color="white"/>,
-      path:"/",
+      path:"/Storage_Bin_Statistics",
   },
 //   {
 //       name:"Current Order",
@@ -90,17 +90,17 @@ const dataRCS = [
   {
       name:"Order",
       logo:<GrUserWorker size={25} color="white"/>,
-      path:"/",
+      path:"/Order",
   },
   {
       name:"Task",
       logo:<MdTask size={25} color="white"/>,
-      path:"/",
+      path:"/Task",
   },
   {
       name:"Log",
       logo:<MdDataObject size={25} color="white"/>,
-      path:"/",
+      path:"/Log",
   },
 ]
 

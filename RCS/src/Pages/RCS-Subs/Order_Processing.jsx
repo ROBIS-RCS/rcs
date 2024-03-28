@@ -1,15 +1,15 @@
 import React from 'react'
 
-const Maintainence = () => {
+const Order_Processing = () => {
   return (
     <div>
       <div className='w-full h-full realtive'>
     <div className='absolute top-10 left-20px'>
-    <p>RCS/Maintenance</p>
+    <p>RCS/Order_Processing</p>
     </div>      
 </div>
     </div>
   )
 }
 
-export default Maintainence
+export default Order_Processing
