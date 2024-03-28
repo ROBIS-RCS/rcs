@@ -27,6 +27,12 @@ import Log from "./Pages/RCS-Subs/Log";
 import Task_Parameters from "./Pages/RCS-Subs/Task_Parameters";
 import Storage_Bin from "./Pages/RCS-Subs/Storage_Bin";
 
+import AGV_Errors from "./Pages/Monitoring-System-Subs/AGV_Errors";
+import AGV_Management from "./Pages/Monitoring-System-Subs/AGV_Management";
+import Realtime_Map from "./Pages/Monitoring-System-Subs/Realtime_Map";
+import Error_Records from "./Pages/Monitoring-System-Subs/Error_Records";
+import Error_Codes from "./Pages/Monitoring-System-Subs/Error_Codes";
+
 
 
 function App() {
@@ -61,7 +67,11 @@ function App() {
             <Route path="/Task" element={<Task />} />
             <Route path="/Log" element={<Log />} />
 
-
+            <Route path="/AGV_Errors" element={<AGV_Errors />}/>
+            <Route path="/AGV_Management" element={<AGV_Management />} />
+            <Route path="/Realtime_Map" element={<Realtime_Map />} />
+            <Route path="/Error_Records" element={<Error_Records />} />
+            <Route path="/Error_Codes" element={<Error_Codes />} />
             
 
 

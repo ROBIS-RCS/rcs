@@ -126,27 +126,27 @@ const dataMS =[
     {
         name:"AGV Management",
         logo:<IoCarOutline size={25} color="white"/>,
-        path:"/",
+        path:"/AGV_Management",
     },
     {
         name:"Realtime Map",
         logo:<FaMapMarkedAlt size={25} color="white"/>,
-        path:"/",
+        path:"/Realtime_Map",
     },
     {
         name:"Error Records",
         logo:<ImStatsDots size={25} color="white"/>,
-        path:"/",
+        path:"/Error_Records",
     },
     {
         name:"Error codes",
         logo:<MdError size={25} color="white"/>,
-        path:"/",
+        path:"/Error_codes",
     },
     {
         name:"AGV Errors",
         logo:<AiFillWarning size={25} color="white"/>,
-        path:"/",
+        path:"/AGV_Errors",
     },
     // {
     //     name:"AGV Task",
