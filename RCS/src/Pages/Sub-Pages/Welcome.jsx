@@ -64,7 +64,7 @@ const Welcome = () => {
       <div className='w-full h-full'>
          <div className="w-full h-full flex flex-col justify-between p-10 relative"> 
         
-          <p className='text-[340%] h-auto flex w-[450px]  origin-top font-bold hover:text-[#911515] drop-shadow-lg'>
+          <p className='text-[450%] h-auto flex w-[450px]  origin-top font-bold hover:text-[#911515] drop-shadow-lg'>
           
           
           <Typewriter
@@ -78,7 +78,7 @@ const Welcome = () => {
           <img src={Mlogo} alt="" className='absolute w-[50px] top-[10px] right-[10px] drop-shadow-lg' /> 
           <div className='w-full h-[300px] flex justify-between items-center'>
             <div className='w-[50%] h-full flex justify-end items-end relative'>
-              <img src={GIF} alt="Storage" className='object-contain absolute left-[-60px] top-10 hover:drop-shadow-xl' />
+              <img src={GIF} alt="Storage" className='object-contain  absolute left-[-50px] top-70 drop-shadow-xl' />
             </div>
             <div className='w-[60%] h-[340px] flex flex-col items-center justify-center p-2'>
               <Marquee pauseOnHover={false} speed={50}  >
