@@ -1,15 +1,15 @@
 import Motherson from "../../../src/assets/Logo/Motherson.png";
 import { useState } from "react";
 import { Link } from "react-router-dom";
-import supabase from "../../../server/createClient";
-import { useNavigate } from "react-router-dom";
-import "./SignupPage.css";
 
-//Icons
 import { IoIosEye } from "react-icons/io"; // Password Eye Open
 import { IoIosEyeOff } from "react-icons/io"; //Password Eyes Close
 
-const Signin = () => {
+
+
+
+const ForgotPass = () => {
+
   const [show, setShow] = useState(false);
   const [cShow, setCshow] = useState(false);
   const [iconClr, setIconClr] = useState(false);
@@ -20,102 +20,73 @@ const Signin = () => {
   const [user, setUser] = useState("Employee"); //for storing the type of the Faculty / User
   const [employee, setEmployee] = useState(""); //for Storing Employee IC
 
-  const navigate = useNavigate();
-
-  //handle event
-  const handleSubmit = async (e) => {
-    e.preventDefault();
-    // console.log(employee, user, username, password, Cpassword);
-    if (password !== Cpassword) {
-      alert("pass should be same");
-      return;
-    }
-    if (username === "" || employee === "" || password === "") {
-      alert("Fill vro!");
-      return;
-    }
-
-    try {
-      const { data, error } = await supabase.from("users").insert([
-        {
-          name: username,
-          emp_id: employee,
-          role: user,
-          pass: password,
-        },
-      ]);
-      if (!error) navigate("/");
-      //   console.log("User created successfully:", data);
-
-      // Reset form fields
-      setUsername("");
-      setPassword("");
-      setCpassword("");
-      setEmployee("");
-      // You might also want to redirect the user or show a success message
-    } catch (error) {
-      console.error("Error creating user:", error.message);
-    }
-  };
-
-  const getName = (e) => {
+const getName = (e) => {
     setUsername(e.target.value);
     // console.log(username);
-  };
+    };
 
-  const getPass = (e) => {
+    const getPass = (e) => {
     setPassword(e.target.value);
     // console.log(password);
-  };
+    };
 
-  const getUser = (e) => {
+    const getUser = (e) => {
     setUser(e.target.value);
-  };
+    };
 
-  const getEmpID = (e) => {
+    const getEmpID = (e) => {
     setEmployee(e.target.value);
-  };
+    };
 
-  const getCpass = (e) => {
+    const getCpass = (e) => {
     setCpassword(e.target.value);
-  };
-  const showPass = () => {
+    };
+    const showPass = () => {
     setShow(!show);
-  };
+    };
 
-  const showCpass = () => {
+    const showCpass = () => {
     setCshow(!cShow);
-  };
+    };
 
-  const changeColor = () => {
+    const changeColor = () => {
     setIconClr(!iconClr);
-  };
+    };
 
-  const changeColor1 = () => {
+    const changeColor1 = () => {
     setIconClr1(!iconClr1);
-  };
+    };
 
-  const data = () => {
+    const data = () => {
     console.log({ employee, user, username, password, Cpassword });
-  };
+    };
+
 
   return (
     <div className="w-[100vw] h-[100vh] flex items-center justify-center overflow-hidden bg-gradient-to-br from-white to-neutral-500">
       <div className=" bg-[#F1F1F1] px-14 py-12 flex flex-col rounded-[25px] shadow-2xl">
         {/* <button onClick={data}>Show data</button> */}
-        <form onSubmit={handleSubmit}>
+        <form>
           <div className="flex justify-end">
-            <Link to="/"> <img src={Motherson} alt="" className="h-8 selection:none" draggable="false"/></Link>
+            <Link to="/">
+                <img
+                src={Motherson}
+                alt=""
+                className="h-8 selection:none"
+                draggable="false"
+                />
+            </Link>
+            
           </div>
           <div className="flex mt-10">
             <p className=" text-black text-[32px] font-bold not-italic">
-              SIGN UP
+                    FORGOT PASSWORD
             </p>
           </div>
-          <div className="w-full h-full mt-10">
-            <div className="grid grid-cols-[2.5fr,1fr] gap-4">
+          <div className="w-[650px] h-full mt-10">
+            <div className="grid grid-cols-[2fr,2fr] gap-4">
               {" "}
-              {/* Emplotee ID */}
+              {/* Employee ID */}
               <div className="w-full h-full relative items-center gap-3">
                 <label
                   htmlFor="EmployeeID"
@@ -138,25 +109,8 @@ const Signin = () => {
                   onChange={getEmpID}
                 />
               </div>
-              <select
-                name="user"
-                id="user"
-                className="px-10 appearance-none rounded-[8px] outline-none text-[18px] font-bold tracking-wide text-[#D82226]"
-                onClick={getUser}
-              >
-                {" "}
-                {/* User */}
-                <option value="Employee" className="text-black font-semibold">
-                  Employee
-                </option>
-                <option value="Manager" className="text-black font-semibold">
-                  Manager
-                </option>
-                <option value="Admin" className="text-black font-semibold">
-                  Admin
-                </option>
-              </select>
-              <div className="w-full h-full relative items-center gap-3 mt-7">
+              
+              <div className="w-full h-full relative items-center gap-3">
                 {" "}
                 {/* Username */}
                 <label
@@ -283,21 +237,15 @@ const Signin = () => {
             <div className="w-full flex flex-col items-center justify-center mt-[40px] gap-2">
               <input
                 type="submit"
-                value="Sign in"
+                value="Submit"
                 className="px-10 py-2 bg-[#D82226] text-white font-bold text-[18px] rounded-[6px] hover:bg-[#d82225ee]"
               />
-              <Link to="/">
-                <p className="text-[12px] font-semibold text-black hover:underline hover:duration-200">
-                  {" "}
-                  Already an user !{" "}
-                </p>
-              </Link>
             </div>
           </div>
         </form>
       </div>
     </div>
-  );
-};
+  )
+}
 
-export default Signin;
+export default ForgotPass

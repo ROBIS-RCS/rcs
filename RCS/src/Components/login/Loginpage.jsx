@@ -84,7 +84,7 @@ const Login = (props) => {
         <div className="w-[100vw] h-[100vh] flex items-center justify-center overflow-hidden bg-gradient-to-br from-white to-neutral-500">
             <div className="w-[680px] h-[580px] bg-[#F1F1F1] px-14 py-12 flex flex-col rounded-[25px]">
                 <div className="flex justify-end">
-                    <img src={Motherson} alt="" className="h-8" />
+                <Link to="/"> <img src={Motherson} alt="" className="h-8 selection:none" draggable="false"/></Link>
                 </div>
                 <div className="flex mt-10">
                     <p className="text-black text-[32px] font-bold not-italic">LOGIN</p>
@@ -111,7 +111,7 @@ const Login = (props) => {
                         </span>
                     </div>
                     <span className="w-full">   {/* Forgott Password */}
-                        <Link>
+                        <Link to="/forgot">
                             <p className="text-[#D82226] hover:text-black hover:underline hover:duration-200 text-[14px] pt-3 text-right">Forgot Password</p>
                         </Link>
                     </span>

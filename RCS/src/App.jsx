@@ -6,11 +6,8 @@ import {
   Route,
   redirect,
 } from "react-router-dom";
-import Sidebar from "./Components/Sidebar/Sidebar";
 import Loginpage from "./Components/login/Loginpage";
 import SignupPage from "./Components/login/SignupPage";
-import Signin from "./Components/login/NewSiginup/Signin";
-// import Login from "./Components/login/NewLogin/Login";
 import Home from "./Pages/Home";
 import Welcome from "./Pages/Sub-Pages/Welcome";
 import Users from "./Pages/Sub-Pages/Users";
@@ -32,6 +29,7 @@ import AGV_Management from "./Pages/Monitoring-System-Subs/AGV_Management";
 import Realtime_Map from "./Pages/Monitoring-System-Subs/Realtime_Map";
 import Error_Records from "./Pages/Monitoring-System-Subs/Error_Records";
 import Error_Codes from "./Pages/Monitoring-System-Subs/Error_Codes";
+import ForgotPass from "./Components/login/ForgotPass";
 
 
 
@@ -42,6 +40,7 @@ function App() {
       <Router>
         <Routes location={location} key={location.pathname}>
           <Route path="/signup" element={<SignupPage />}></Route>
+          <Route path="/forgot" element={<ForgotPass />}></Route>
           <Route
             path="/"
             element={
