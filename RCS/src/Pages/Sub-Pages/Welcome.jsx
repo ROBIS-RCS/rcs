@@ -65,8 +65,6 @@ const Welcome = () => {
          <div className="w-full h-full flex flex-col justify-between p-10 relative"> 
         
           <p className='text-[450%] h-auto flex w-[450px]  origin-top font-bold hover:text-[#911515] drop-shadow-lg'>
-          
-          
           <Typewriter
             onInit={(typewriter) => {
               typewriter.typeString('  Welcome to robis-RCS...  ')
