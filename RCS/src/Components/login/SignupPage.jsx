@@ -1,7 +1,7 @@
 import Motherson from "../../../src/assets/Logo/Motherson.png";
 import { useState } from "react";
 import { Link } from "react-router-dom";
-import supabase from "../../../server/createClient";
+import supabase from "../../../server/config.mjs";
 import { useNavigate } from "react-router-dom";
 import "./SignupPage.css";
 
@@ -105,7 +105,15 @@ const Signin = () => {
         {/* <button onClick={data}>Show data</button> */}
         <form onSubmit={handleSubmit}>
           <div className="flex justify-end">
-            <Link to="/"> <img src={Motherson} alt="" className="h-8 selection:none" draggable="false"/></Link>
+            <Link to="/">
+              {" "}
+              <img
+                src={Motherson}
+                alt=""
+                className="h-8 selection:none"
+                draggable="false"
+              />
+            </Link>
           </div>
           <div className="flex mt-10">
             <p className=" text-black text-[32px] font-bold not-italic">

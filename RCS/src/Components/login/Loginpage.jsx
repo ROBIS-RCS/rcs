@@ -19,7 +19,7 @@ const Login = (props) => {
 
   const authenticateUser = async () => {
     console.log(username, password, userType);
-    fetch("http://localhost:3000/login", {
+    fetch("http://localhost:4000/login", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({

@@ -2,18 +2,19 @@ import express from 'express';
 import cors from 'cors';
 import jwt from 'jsonwebtoken'
 import supabase from './config.mjs';
-import cookieParser from 'cookie-parser';
+// import cookieParser from 'cookie-parser';
 
 const app = express();
 
 app.use(cors()) // {origin : 'http://localhost:3000', credentials : true}
 app.use(express.json())
-app.use(cookieParser());
+// app.use(cookieParser());
 
 app.post('/login', async (req, res) => {
     let userId = req.body.emp_id;
     let pass = req.body.password;
     let role = req.body.role;
+    console.log(userId, pass, role);
     let user_det = {
         id: '',
         name: '',
@@ -27,9 +28,11 @@ app.post('/login', async (req, res) => {
             error
         } = await supabase
             .from('users')
-            .select("*")
-            .eq('emp_id', userId)
-        if (users.length === 0) return res.json({
+            .select("*").eq('emp_id', userId)
+        // console.log(users);
+
+        if (!users || users?.length === 0) return res.json({
+            data: users,
             success: false,
             message: "There's no such user!"
         })
@@ -40,7 +43,7 @@ app.post('/login', async (req, res) => {
         user_det.password = users[0].password;
         // console.log(user_det);
     } catch (error) {
-        res.json({
+        return res.json({
             message: 'problem while retrieving from supabase',
             err: error
         })
@@ -70,6 +73,6 @@ app.post('/login', async (req, res) => {
 });
 
 
-app.listen(3000, () => {
+app.listen(4000, () => {
     console.log('Connected successfully!');
 })
