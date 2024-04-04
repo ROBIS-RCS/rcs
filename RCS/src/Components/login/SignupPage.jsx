@@ -41,7 +41,7 @@ const Signin = () => {
           name: username,
           emp_id: employee,
           role: user,
-          pass: password,
+          password: password,
         },
       ]);
       if (!error) navigate("/");
