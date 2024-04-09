@@ -17,7 +17,7 @@ const DropDown = ({ title, optionsArray, icon }) => {
       >
         <span className="flex items-center justify-left gap-5">
           {icon}
-          <p className="font-sans text-white text-[18px]">{title}</p>
+          <p className="font-sans text-white text-[18px] whitespace-nowrap overflow-clip">{title}</p>
         </span>
         <img
           src={DropArrow}
@@ -39,9 +39,9 @@ const DropDown = ({ title, optionsArray, icon }) => {
         <div className="w-full h-full bg-[#282828] p-2 grid gap-2 rounded-[6px]">
           {optionsArray?.map((option, key) => (
             <Link key={key} to={option.path}>
-              <span className="w-full p-3 rounded hover:bg-[#494949] hover:rounded-[5px] duration-500 flex items-center justify-left gap-2">
+              <span className="w-full p-3 rounded hover:bg-[#911515] hover:rounded-[5px] hover:scale-[1.02] duration-500 flex items-center justify-left gap-2">
                 {option.logo}
-                <p className="text-[18px] font-sans text-white">
+                <p className="text-[18px] font-sans text-white whitespace-nowrap overflow-clip">
                   {option.name}
                 </p>
               </span>

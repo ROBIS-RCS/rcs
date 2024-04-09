@@ -1,4 +1,4 @@
-import React from "react";
+import React,{useState}from "react";
 import MothersonS from "../../assets/Logo/MOTHERSON_white.png";
 import DropDown from "./DropDown";
 import "./hoverAnim.css";
@@ -161,8 +161,15 @@ const dataMS = [
   // },
 ];
 const Sidebar = (props) => {
+  const [enter, setEnter] = useState(false)
   const signOut = useSignOut();
   const authUser = useAuthUser();
+
+  const mouseEnterIn = () => {
+    setEnter(!enter)
+  }
+
+
   const LogOut = () => {
     signOut();
     props.setLog(!props.log);
@@ -170,11 +177,9 @@ const Sidebar = (props) => {
   };
 
   return (
-    <div className="w-[350px] h-screen bg-[#911515] duration-500ms flex items-center justify-start flex-col gap-2.5 pb-10 hoverShowSideBar overflow-y-scroll ">
+    <div className={`${enter ? "w-[340px]" : "w-[100px]"} w-[350px] h-screen bg-[#911515] duration-100ms flex items-center justify-start flex-col gap-2.5 pb-10 hoverShowSideBar overflow-y-scroll`} onMouseEnter={mouseEnterIn} onMouseLeave={mouseEnterIn}>
       <div className="w-[calc(100%-30px)] drop-shadow-2xl flex items-center justify-start px-2 py-5">
-        <Link to="/welcome">
           <img src={MothersonS} alt="" className="w-[200px]" />
-        </Link>
       </div>
       <div className="w-[calc(100%-30px)] h-auto bg-black px-5 py-4 flex items-center justify-between rounded-[12px]">
         {" "}
@@ -182,16 +187,16 @@ const Sidebar = (props) => {
         <div className="w-full flex items-center gap-3">
           <img src="" alt="" className="p-7 rounded-full bg-[#888888]" />
           <span>
-            <p className="flex text-[18px] font-bold text-white hover:text-red-600 duration-200">
+            <p className={"flex text-[18px] font-bold text-white hover:text-red-600 duration-200"}>
               {authUser.user}
             </p>
-            <p className="flex text-[14px] font-semibold text-[#888] hover:text-white duration-200">
+            <p className={ "flex text-[14px] font-semibold text-[#888] hover:text-white duration-200"}>
               {authUser.role}
             </p>
           </span>
         </div>
         <div
-          className="p-3 rounded-full bg-red-600 hover:bg-red-500"
+          className={"p-3 rounded-full bg-red-600 hover:bg-red-500"}
           title="Logout"
           onClick={LogOut}
         >
@@ -199,7 +204,7 @@ const Sidebar = (props) => {
         </div>
       </div>
 
-      <NotificationBar />
+      <NotificationBar show={enter}/>
 
       <div className="w-[calc(100%-30px)]  flex flex-col items-center justify-center p-3 bg-black rounded-[10px]">
         {/* <DropDown title={"System"} optionsArray={dataSystem} icon={<FaDesktop size={25}  color="white" />} /> */}
@@ -207,11 +212,13 @@ const Sidebar = (props) => {
           title={"RCS"}
           optionsArray={dataRCS}
           icon={<FaLocationCrosshairs size={25} color="white" />}
+          show={enter}
         />
         <DropDown
           title={"Monitoring System"}
           optionsArray={dataMS}
           icon={<ImStatsDots size={25} color="white" />}
+          show={enter}
         />
       </div>
     </div>

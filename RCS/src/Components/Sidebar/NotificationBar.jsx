@@ -1,10 +1,16 @@
 import { IoNotifications } from "react-icons/io5";  //Notification
-import { LuLanguages } from "react-icons/lu";  //Language
+import { AiFillHome } from "react-icons/ai"; // Home
 import { FaUserCircle } from "react-icons/fa"; // User
 
 import {Link} from "react-router-dom"
 
 const dataNB = [
+    {
+        title: "Home",
+        icon: <AiFillHome  size={25} color='white'/>,
+        isNotification: false,
+        path: "/welcome"
+    },
     {
         title: "Notification",
         icon: <IoNotifications size={25} color='white'/>,
@@ -16,12 +22,6 @@ const dataNB = [
         icon: <FaUserCircle size={25} color='white'/>,
         isNotification: false,
         path:"/users"
-    },
-    {
-        title: "Language",
-        icon: <LuLanguages size={25} color='white'/>,
-        isNotification: false,
-        path:"/language"
     },
 ]
 
@@ -36,7 +36,7 @@ const NotificationBar = () => {
                 <Link to={nb.path}>
                     <div className='w-full h-full flex items-center justify-center gap-1 hover:border-l-2 hover:border-r-2 realtive titleShow'>
                         {nb.icon}
-                        <p className={nb.isNotification ? 'px-1.5 py-0.5 text-white font-semibold bg-red-600 rounded-full duration-300' : "hidden"}>10</p>
+                        <p className={nb.isNotification ? 'px-1.5 py-0.5 text-white font-semibold bg-red-600 rounded-full duration-300 text-[14px]' : "hidden"}>10</p>
                         <p className='absolute px-3 py-1 bg-[#00000045] text-white font-semibold text-[14px] translate-x-[0px] translate-y-8 titleText invisible'>{nb.title}</p>
                     </div>
                 </Link>
