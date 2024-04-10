@@ -1,5 +1,5 @@
 import Motherson from "../../assets/Logo/Motherson.png";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import { IoIosEye, IoIosEyeOff } from "react-icons/io"; // Password Eye Icons
 import "./Loginpage.css";
@@ -44,6 +44,7 @@ const Login = (props) => {
               role: data.user_data.role,
             },
           });
+          window.location.reload();
         }
       })
       .catch((err) => alert(err));
