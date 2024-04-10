@@ -44,11 +44,10 @@ function App() {
           <Route
             path="/"
             element={
-              logged ? (
+             
                 <Home log={logged} setLog={setLogged} />
-              ) : (
-                <Loginpage log={logged} setLog={setLogged} />
-              )
+             
+              
             }
           >
             <Route index path="/welcome" element={<Welcome />} />

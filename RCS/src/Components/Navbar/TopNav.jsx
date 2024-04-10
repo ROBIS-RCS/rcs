@@ -52,8 +52,8 @@ const TopNav = (props) => {
                 <span className="flex gap-4 items-center">
                     <img src="" alt="" className="w-12 h-12 rounded-full bg-[#fff]"/>
                     <span >
-                        <p className="text-[20px]  font-bold text-white font-mono tracking-wide">{auth.user}</p>
-                        <p className="text-[14px] font-semibold text-red-500">{auth.role}</p>
+                        <p className="text-[20px]  font-bold text-white font-mono tracking-wide">{}</p>
+                        <p className="text-[14px] font-semibold text-red-500">{}</p>
                     </span>
                     
                 </span>

@@ -61,7 +61,7 @@ const Welcome = () => {
       <div className='absolute top-0 left-[350px]'>
           <Particle/>
         </div>
-      <div className='w-full h-full'>
+      <div className='w-full h-full ' >
          <div className="w-full h-full flex flex-col justify-between p-10 relative"> 
         
           <p className='text-[450%] h-auto flex w-[450px]  origin-top font-bold hover:text-[#911515] drop-shadow-lg'>
