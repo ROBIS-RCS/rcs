@@ -1,5 +1,5 @@
 import Motherson from "../../../src/assets/Logo/Motherson.png";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import supabase from "../../../server/config.mjs";
 import { useNavigate } from "react-router-dom";
@@ -22,6 +22,9 @@ const Signin = () => {
 
   const navigate = useNavigate();
 
+  const [file, setFile] = useState({});
+  const [img_path, setImg_path] = useState("");
+
   //handle event
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -30,7 +33,14 @@ const Signin = () => {
       alert("pass should be same");
       return;
     }
-    if (username === "" || employee === "" || password === "") {
+    if (
+      username === "" ||
+      employee === "" ||
+      password === "" ||
+      img_path === "" ||
+      !file
+    ) {
+      console.log(username, employee, img_path, file);
       alert("Fill vro!");
       return;
     }
@@ -42,6 +52,7 @@ const Signin = () => {
           emp_id: employee,
           role: user,
           password: password,
+          emp_img: img_path,
         },
       ]);
       if (!error) navigate("/");
@@ -57,6 +68,39 @@ const Signin = () => {
       console.error("Error creating user:", error.message);
     }
   };
+
+  useEffect(() => {
+    const uploadFile = async () => {
+      let locatePath = "";
+      try {
+        const { data, error } = await supabase.storage
+          .from("emp-images")
+          .upload("public/" + username + "-" + employee, file, {
+            upsert: false,
+          });
+
+        if (error) throw error;
+        locatePath = data.path;
+      } catch (error) {
+        console.error("Failed to upload file:", error.message);
+        return;
+      }
+
+      try {
+        const { data } = await supabase.storage
+          .from("emp-images")
+          .getPublicUrl(locatePath);
+        // console.log(data.publicUrl);
+        setImg_path(data.publicUrl); // img path
+      } catch (error) {
+        console.error("Failed to retrieve public URL:", error.message);
+      }
+    };
+
+    if (file) {
+      uploadFile();
+    }
+  }, [file]);
 
   const getName = (e) => {
     setUsername(e.target.value);
@@ -186,6 +230,14 @@ const Signin = () => {
                     username && "bg-white"
                   } focus:duration-200 border-black selection:none select-none`}
                   onChange={getName}
+                />
+                <input
+                  type="file"
+                  accept="image/*"
+                  id="inp_img"
+                  onChange={(e) => {
+                    setFile(e.target.files[0]);
+                  }}
                 />
               </div>
             </div>

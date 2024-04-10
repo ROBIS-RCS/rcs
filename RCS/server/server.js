@@ -20,7 +20,8 @@ app.post('/login', async (req, res) => {
         name: '',
         emp_id: '',
         role: '',
-        password: ''
+        password: '',
+        emp_img: ''
     }
     try {
         const {
@@ -41,6 +42,7 @@ app.post('/login', async (req, res) => {
         user_det.emp_id = users[0].emp_id;
         user_det.role = users[0].role;
         user_det.password = users[0].password;
+        user_det.emp_img = users[0].emp_img;
         // console.log(user_det);
     } catch (error) {
         return res.json({
@@ -59,7 +61,7 @@ app.post('/login', async (req, res) => {
     const jwtToken = jwt.sign({
             id: user_det.id,
             user: user_det.name,
-            role: user_det.role
+            role: user_det.role,
         },
         '8F6DAD2C3EAFB7B7C3A9FDC71B81E8D3B6A88C6A7850B6A74CD12CCE1FAD4C92', { // secret_key
             expiresIn: "1h"

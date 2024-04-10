@@ -42,6 +42,7 @@ const Login = (props) => {
               user: data.user_data.name,
               id: data.user_data.id,
               role: data.user_data.role,
+              URL: data.user_data.emp_img,
             },
           });
           window.location.reload();
