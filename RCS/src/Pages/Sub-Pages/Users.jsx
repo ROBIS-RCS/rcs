@@ -34,7 +34,7 @@ const Users = () => {
                     </div>
                     <div className="w-full  gap-3 grid grid-cols-[2fr,2fr,1fr]">
                         <button className="flex gap-1 w-full py-2 text-white font-semibold rounded-[5px] bg-red-700 hover:bg-red-600 active:scale-[0.97] items-center justify-center"><MdDeleteForever size={21} color="white" />Delete</button>
-                        <button className="flex w-full py-2 text-white font-semibold rounded-[5px] bg-black items-center justify-center active:scale-[0.97]">ABCD</button>
+                        <button className="flex w-full py-2 text-white font-semibold rounded-[5px] bg-black items-center justify-center active:scale-[0.97]">Edit</button>
                         <button className="flex w-full py-2 font-semibold rounded-[5px] bg-black items-center justify-center active:scale-[0.97]"><FaCircleInfo size={20} color="white"/></button>
                     </div>
                 </div>
