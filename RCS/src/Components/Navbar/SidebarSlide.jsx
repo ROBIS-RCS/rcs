@@ -22,7 +22,7 @@ const SidebarSlide = ({hover, select, setSelect}) => {
         duration: 0.25,
         ease: "easeInOut",
       }}
-      className={`h-full flex flex-col pt-28 gap-8 w-64 absolute bg-neutral-900 ml-0 ${
+      className={`h-full z-40 flex flex-col pt-28 gap-8 w-64 absolute bg-neutral-900 ml-0 ${
         hover ? "left-[100%] duration-500" : "left-[100%] duration-300"
       } border-r border-neutral-800 p-5`}
     >
