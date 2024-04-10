@@ -7,10 +7,11 @@ import TopNav from "../Components/Navbar/TopNav"
 const Home = ({log, setLog}) => {
   return (
     <div className="relative w-full h-full flex">
-           <Sidebar />
-           <TopNav log={log} setLog={setLog}/>
-        <Outlet/>
-        
+        <Sidebar />
+        <TopNav log={log} setLog={setLog}/>
+        <div className="w-full pl-[5rem] pt-24 p-5 h-screen">
+          <Outlet/>
+        </div>
         
     </div>
   )

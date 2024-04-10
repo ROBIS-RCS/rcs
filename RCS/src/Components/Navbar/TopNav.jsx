@@ -28,12 +28,12 @@ const TopNav = (props) => {
     const profileAnimation = {
         inView: {
             opacity: 1,
-            // visibility: "visible"
+            duration:3
         },
 
         offView: {
             opacity: 0,
-
+            duration:3
         }
     }
 
@@ -48,11 +48,7 @@ const TopNav = (props) => {
             initial="offView"
             animate="inView"
             exit="offView"
-            transition={{
-                duration: 0.25,
-                type:"spring"
-            }}
-            className={"w-[15rem] h-fit p-5 bg-black shadow-xl drop-shadow-md absolute bottom-[-160px] right-1 rounded-[10px]"}>
+            className={viewProfile ? "w-[15rem] h-fit p-5 bg-black shadow-xl drop-shadow-md absolute bottom-[-160px] right-1 rounded-[10px]" : "hidden"}>
                 <span className="flex gap-4 items-center">
                     <img src="" alt="" className="w-12 h-12 rounded-full bg-[#fff]"/>
                     <span >
