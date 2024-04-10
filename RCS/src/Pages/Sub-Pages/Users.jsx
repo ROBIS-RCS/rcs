@@ -40,7 +40,7 @@ const Users = () => {
                 </div>
             ))}
             <div className="w-full h-[200px] rounded-[10px] flex items-center justify-center hover:shadow-xl duration-200 border-2">
-                <img src={AddMore} alt="" className="w-[25%] opacity-30 hover:opacity-70 active:scale-95 duration-200" onClick={addProf} />
+                <img src={AddMore} alt="" className="w-[15%] opacity-30 hover:opacity-70 active:scale-95 duration-200" onClick={addProf} />
             </div>
         </div>
     );

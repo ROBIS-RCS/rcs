@@ -13,7 +13,7 @@ const Sidebar = () => {
   const [selectedState, setSelectedState] = useState("")
 
   return (
-    <div className='fixed top-0 left-0 h-full'>
+    <div className='fixed z-50 top-0 left-0 h-full'>
       
       
       <AnimatePresence >
