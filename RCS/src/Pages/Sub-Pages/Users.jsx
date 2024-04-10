@@ -22,7 +22,7 @@ const Users = () => {
     };
 
     return (
-        <div className="w-full p-4 grid grid-cols-2 align-top gap-4 rounded-[15px]">
+        <div className="w-full p-4 grid grid-cols-2 align-top gap-4 rounded-[15px] duration-1000">
             { profiles.map((cont, index) => (
                 <div key={index} className="w-full h-[180px] rounded-[10px] flex flex-col p-5 bg-gradient-to-tl from-gray-300  to-red-100 justify-between duration-300 hover:shadow-xl">
                     <div className="w-full items-center flex gap-4">
@@ -39,8 +39,8 @@ const Users = () => {
                     </div>
                 </div>
             ))}
-            <div className="w-full h-[200px] rounded-[10px] flex items-center justify-center hover:shadow-xl duration-200 border-2">
-                <img src={AddMore} alt="" className="w-[15%] opacity-30 hover:opacity-70 active:scale-95 duration-200" onClick={addProf} />
+            <div className="w-full h-[180px] rounded-[10px] flex items-center justify-center hover:shadow-xl duration-200 border-2">
+                <img src={AddMore} alt="" className="w-[17%] opacity-30 hover:opacity-70 active:scale-95 duration-200" onClick={addProf} />
             </div>
         </div>
     );
