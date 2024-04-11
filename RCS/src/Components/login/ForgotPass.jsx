@@ -1,15 +1,13 @@
 import Motherson from "../../../src/assets/Logo/Motherson.png";
 import { useState } from "react";
 import { Link } from "react-router-dom";
+import supabase from "../../../server/config.mjs";
+import { useNavigate } from "react-router-dom";
 
 import { IoIosEye } from "react-icons/io"; // Password Eye Open
 import { IoIosEyeOff } from "react-icons/io"; //Password Eyes Close
 
-
-
-
 const ForgotPass = () => {
-
   const [show, setShow] = useState(false);
   const [cShow, setCshow] = useState(false);
   const [iconClr, setIconClr] = useState(false);
@@ -18,49 +16,85 @@ const ForgotPass = () => {
   const [password, setPassword] = useState(""); //For Storing Password
   const [Cpassword, setCpassword] = useState(""); //For Storing Password
   const [user, setUser] = useState("Employee"); //for storing the type of the Faculty / User
-  const [employee, setEmployee] = useState(""); //for Storing Employee IC
+  const [employee, setEmployee] = useState(""); //for Storing Employee Id
 
-const getName = (e) => {
+  const navigate = useNavigate();
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    if (password !== Cpassword) {
+      alert("pass should be same");
+      return;
+    }
+
+    async function check() {
+      const { data: users, error } = await supabase
+        .from("users")
+        .select("*")
+        .eq("emp_id", employee);
+
+      return users;
+    }
+
+    let user_cre = await check();
+
+    if (user_cre.length === 0 || user_cre[0].name !== username) {
+      alert("data not valid");
+      return;
+    }
+
+    const { data, error } = await supabase
+      .from("users")
+      .update({ password: password })
+      .eq("emp_id", employee)
+      .select();
+    if (error) console.log("Error occured : ", error);
+    else if (data.length === 1) {
+      alert("fine, you'll redirect to login page");
+      navigate("/");
+    }
+  };
+
+  const getName = (e) => {
     setUsername(e.target.value);
     // console.log(username);
-    };
+  };
 
-    const getPass = (e) => {
+  const getPass = (e) => {
     setPassword(e.target.value);
     // console.log(password);
-    };
+  };
 
-    const getUser = (e) => {
+  const getUser = (e) => {
     setUser(e.target.value);
-    };
+  };
 
-    const getEmpID = (e) => {
+  const getEmpID = (e) => {
     setEmployee(e.target.value);
-    };
+  };
 
-    const getCpass = (e) => {
+  const getCpass = (e) => {
     setCpassword(e.target.value);
-    };
-    const showPass = () => {
+  };
+  const showPass = () => {
     setShow(!show);
-    };
+  };
 
-    const showCpass = () => {
+  const showCpass = () => {
     setCshow(!cShow);
-    };
+  };
 
-    const changeColor = () => {
+  const changeColor = () => {
     setIconClr(!iconClr);
-    };
+  };
 
-    const changeColor1 = () => {
+  const changeColor1 = () => {
     setIconClr1(!iconClr1);
-    };
+  };
 
-    const data = () => {
+  const data = () => {
     console.log({ employee, user, username, password, Cpassword });
-    };
-
+  };
 
   return (
     <div className="w-[100vw] h-[100vh] flex items-center justify-center overflow-hidden bg-gradient-to-br from-white to-neutral-500">
@@ -69,18 +103,17 @@ const getName = (e) => {
         <form>
           <div className="flex justify-end">
             <Link to="/">
-                <img
+              <img
                 src={Motherson}
                 alt=""
                 className="h-8 selection:none"
                 draggable="false"
-                />
+              />
             </Link>
-            
           </div>
           <div className="flex mt-10">
             <p className=" text-black text-[32px] font-bold not-italic">
-                    FORGOT PASSWORD
+              FORGOT PASSWORD
             </p>
           </div>
           <div className="w-[650px] h-full mt-10">
@@ -109,7 +142,6 @@ const getName = (e) => {
                   onChange={getEmpID}
                 />
               </div>
-              
               <div className="w-full h-full relative items-center gap-3">
                 {" "}
                 {/* Username */}
@@ -239,13 +271,14 @@ const getName = (e) => {
                 type="submit"
                 value="Submit"
                 className="px-10 py-2 bg-[#D82226] text-white font-bold text-[18px] rounded-[6px] hover:bg-[#d82225ee]"
+                onClick={handleSubmit}
               />
             </div>
           </div>
         </form>
       </div>
     </div>
-  )
-}
+  );
+};
 
-export default ForgotPass
+export default ForgotPass;
