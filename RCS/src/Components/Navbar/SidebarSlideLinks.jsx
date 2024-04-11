@@ -2,11 +2,15 @@ import React from 'react'
 import {Link} from "react-router-dom"
 import { ChevronRightIcon } from "@heroicons/react/24/outline"
 
-const SidebarSlideLinks = ({name, children, select, setSelect}) => {
+const SidebarSlideLinks = ({name, children, select, setSelect, options, setOptions}) => {
     const handleClick = () => {
         setSelect(null)
+        setOptions(null)
+        
         setTimeout(() => {
-            setSelect(name)
+            setSelect(name);
+            setOptions(options);
+            console.log(options)
         }, 250)
     }
   return (

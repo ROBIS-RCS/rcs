@@ -9,8 +9,11 @@ body {
 }
 
 ::-webkit-scrollbar {
-    display: hidden;
-}
+    width: 0px;
+  }
+  
+
+
 
 /* Title Hover Animation */
 .titleShow:hover .titleText {
