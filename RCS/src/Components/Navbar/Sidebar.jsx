@@ -1,16 +1,133 @@
 import React, {useState} from 'react'
 import {motion, AnimatePresence } from "framer-motion"
 import SidebarLinks from './SidebarLinks'
-
-//Icons
-import { TiHomeOutline } from "react-icons/ti"; //Home
 import SidebarSlide from './SidebarSlide';
 import SidebarSlideLinks from './SidebarSlideLinks';
+
+//Icons
+// import { TiHomeOutline } from "react-icons/ti"; //Home
+import { IoCarOutline } from "react-icons/io5";  //Vehicle
+// import { AiFillWarning } from "react-icons/ai";  //AGV Breakdown
+import { AiFillWarning } from "react-icons/ai";  //AGV Breakdown
+import { ImStatsDots } from "react-icons/im";  //Stat Utilization
+import { FaTasks } from "react-icons/fa";   //Task Parameters
+import { HiMiniCpuChip } from "react-icons/hi2";  //Order Processing
+import { MdOutlineLocationCity } from "react-icons/md";  //District
+import { GrStorage } from "react-icons/gr";  //Storage bin
+import { FaNetworkWired } from "react-icons/fa6";  //Storage Bin Status
+import { ImStatsBars } from "react-icons/im";  //Storage Bin Stats
+import { GrUserWorker } from "react-icons/gr";  //Order
+import { MdTask } from "react-icons/md"; //Task
+import { MdDataObject } from "react-icons/md";  //Log
+import { GrVmMaintenance } from "react-icons/gr";  //Maintenance
+import { MdError } from "react-icons/md";
+import { FaLocationCrosshairs } from "react-icons/fa6";
+import { FaUserCircle } from "react-icons/fa";
+import { FaUserCog } from "react-icons/fa";
+import { FaDesktop } from "react-icons/fa";
+import { IoGitNetworkSharp } from "react-icons/io5";
+import { FaMapMarkedAlt } from "react-icons/fa";
+import { MdLogout } from "react-icons/md"; //Log out
+
+
+const dataRCS = [
+  {
+      name:"Vehicle",
+      logo:<IoCarOutline size={25} color="white"/>,
+      path:"/Vehicle",
+  },
+  {
+    name:"Maintenance",
+    logo:<GrVmMaintenance size={25} color="white"/>,
+    path:"/Maintenance",
+  },
+  {
+      name:"Stat Utilization",
+      logo:<ImStatsDots size={25} color="white"/>,
+      path:"/Stat_Utilization",
+  },
+  {
+      name:"Task Parameters",
+      logo:<FaTasks size={25} color="white"/>,
+      path:"/Task_Parameters",
+  },
+  {
+      name:"Order Processing",
+      logo:<HiMiniCpuChip size={25} color="white"/>,
+      path:"/Order_Processing",
+  },
+  {
+      name:"Region",
+      logo:<MdOutlineLocationCity size={25} color="white"/>,
+      path:"/Region",
+  },
+  {
+      name:"Storage Bin",
+      logo:<GrStorage size={25} color="white"/>,
+      path:"/Storage_Bin",
+  },
+  {
+      name:"Storage Bin Status",
+      logo:<FaNetworkWired size={25} color="white"/>,
+      path:"/Storage_Bin_Status",
+  },
+  {
+      name:"Storage Bin Statistics",
+      logo:<ImStatsBars size={25} color="white"/>,
+      path:"/Storage_Bin_Statistics",
+  },
+  {
+      name:"Order",
+      logo:<GrUserWorker size={25} color="white"/>,
+      path:"/Order",
+  },
+  {
+      name:"Task",
+      logo:<MdTask size={25} color="white"/>,
+      path:"/Task",
+  },
+  {
+      name:"Log",
+      logo:<MdDataObject size={25} color="white"/>,
+      path:"/Log",
+  },
+]
+
+const dataMS =[
+  {
+      name:"AGV Management",
+      logo:<IoCarOutline size={25} color="white"/>,
+      path:"/AGV_Management",
+  },
+  {
+      name:"Realtime Map",
+      logo:<FaMapMarkedAlt size={25} color="white"/>,
+      path:"/Realtime_Map",
+  },
+  {
+      name:"Error Records",
+      logo:<ImStatsDots size={25} color="white"/>,
+      path:"/Error_Records",
+  },
+  {
+      name:"Error codes",
+      logo:<MdError size={25} color="white"/>,
+      path:"/Error_codes",
+  },
+  {
+      name:"AGV Errors",
+      // logo:<AiFillWarning size={25} color="white"/>,
+      logo:<AiFillWarning size={25} color="white"/>,
+      path:"/AGV_Errors",
+  },
+]
+
 
 const Sidebar = () => {
 
   const [hoverState, setHoverState] = useState(false)
   const [selectedState, setSelectedState] = useState("")
+  const [options, setOptions] = useState()
 
   return (
     <div className='fixed z-50 top-0 left-0 h-full'>
@@ -18,7 +135,7 @@ const Sidebar = () => {
       
       <AnimatePresence >
         {
-          selectedState && <SidebarSlide hover={hoverState} setHover={setHoverState} select={selectedState} setSelect = {setSelectedState}/>
+          selectedState && <SidebarSlide hover={hoverState} setHover={setHoverState} select={selectedState} setSelect = {setSelectedState} options={options}/>
         }
       </AnimatePresence >
       <motion.div
@@ -58,14 +175,14 @@ const Sidebar = () => {
                   </svg>
             </SidebarLinks>
 
-            <SidebarSlideLinks name={"RCS"} className="min-w-8 w-8" select={selectedState} setSelect = {setSelectedState} >
+            <SidebarSlideLinks name={"RCS"} className="min-w-8 w-8" select={selectedState} setSelect = {setSelectedState} options={dataRCS} setOptions={setOptions}>
               <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="stroke-[1.5] stroke-white min-w-8 w-8">
                 <path strokeLinecap="round" strokeLinejoin="round" d="M9.594 3.94c.09-.542.56-.94 1.11-.94h2.593c.55 0 1.02.398 1.11.94l.213 1.281c.063.374.313.686.645.87.074.04.147.083.22.127.325.196.72.257 1.075.124l1.217-.456a1.125 1.125 0 0 1 1.37.49l1.296 2.247a1.125 1.125 0 0 1-.26 1.431l-1.003.827c-.293.241-.438.613-.43.992a7.723 7.723 0 0 1 0 .255c-.008.378.137.75.43.991l1.004.827c.424.35.534.955.26 1.43l-1.298 2.247a1.125 1.125 0 0 1-1.369.491l-1.217-.456c-.355-.133-.75-.072-1.076.124a6.47 6.47 0 0 1-.22.128c-.331.183-.581.495-.644.869l-.213 1.281c-.09.543-.56.94-1.11.94h-2.594c-.55 0-1.019-.398-1.11-.94l-.213-1.281c-.062-.374-.312-.686-.644-.87a6.52 6.52 0 0 1-.22-.127c-.325-.196-.72-.257-1.076-.124l-1.217.456a1.125 1.125 0 0 1-1.369-.49l-1.297-2.247a1.125 1.125 0 0 1 .26-1.431l1.004-.827c.292-.24.437-.613.43-.991a6.932 6.932 0 0 1 0-.255c.007-.38-.138-.751-.43-.992l-1.004-.827a1.125 1.125 0 0 1-.26-1.43l1.297-2.247a1.125 1.125 0 0 1 1.37-.491l1.216.456c.356.133.751.072 1.076-.124.072-.044.146-.086.22-.128.332-.183.582-.495.644-.869l.214-1.28Z" />
                 <path strokeLinecap="round" strokeLinejoin="round" d="M15 12a3 3 0 1 1-6 0 3 3 0 0 1 6 0Z" />
               </svg>
             </SidebarSlideLinks>
 
-            <SidebarSlideLinks name={"Monitoring"} className="min-w-8 w-8" select={selectedState} setSelect = {setSelectedState} >
+            <SidebarSlideLinks name={"Monitoring"} className="min-w-8 w-8" select={selectedState} setSelect = {setSelectedState} options={dataMS} setOptions={setOptions}>
               <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="stroke-[1.5] stroke-white min-w-8 w-8">
                 <path strokeLinecap="round" strokeLinejoin="round" d="M9 17.25v1.007a3 3 0 0 1-.879 2.122L7.5 21h9l-.621-.621A3 3 0 0 1 15 18.257V17.25m6-12V15a2.25 2.25 0 0 1-2.25 2.25H5.25A2.25 2.25 0 0 1 3 15V5.25m18 0A2.25 2.25 0 0 0 18.75 3H5.25A2.25 2.25 0 0 0 3 5.25m18 0V12a2.25 2.25 0 0 1-2.25 2.25H5.25A2.25 2.25 0 0 1 3 12V5.25" />
               </svg>
