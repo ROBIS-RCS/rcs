@@ -34,7 +34,7 @@ import ForgotPass from "./Components/login/ForgotPass";
 
 function App() {
   const isAuthenticated = useIsAuthenticated();
-  const [logged, setLogged] = useState(isAuthenticated);
+  const [logged, setLogged] = useState(true); //isAuthenticated
   return (
     <div className="w-full h-full p-0 m-0 flex items-center justify-between gap-5">
       <Router>
