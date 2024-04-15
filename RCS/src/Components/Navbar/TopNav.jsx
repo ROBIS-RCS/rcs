@@ -63,7 +63,7 @@ const TopNav = (props) => {
                 className="w-12 h-12 rounded-full bg-[#fff]"
               />
               <span>
-                <p className="text-[20px]  font-bold text-white font-mono tracking-wide">
+                <p className="text-[20px] font-bold text-white tracking-wide">
                   {auth.user}
                 </p>
                 <p className="text-[14px] font-semibold text-red-500">

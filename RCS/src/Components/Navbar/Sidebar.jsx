@@ -7,7 +7,7 @@ import SidebarSlideLinks from './SidebarSlideLinks';
 //Icons
 // import { TiHomeOutline } from "react-icons/ti"; //Home
 import { IoCarOutline } from "react-icons/io5";  //Vehicle
-// import { AiFillWarning } from "react-icons/ai";  //AGV Breakdown
+import { AiFillWarning } from "react-icons/ai";  //AGV Breakdown
 import { ImStatsDots } from "react-icons/im";  //Stat Utilization
 import { FaTasks } from "react-icons/fa";   //Task Parameters
 import { HiMiniCpuChip } from "react-icons/hi2";  //Order Processing
@@ -115,7 +115,7 @@ const dataMS =[
   },
   {
       name:"AGV Errors",
-      // logo:<AiFillWarning size={25} color="white"/>,
+      logo:<AiFillWarning size={25} color="white"/>,
       path:"/AGV_Errors",
   },
 ]
@@ -133,7 +133,7 @@ const Sidebar = () => {
       
       <AnimatePresence >
         {
-          selectedState && <SidebarSlide hover={hoverState} setHover={setHoverState} select={selectedState} setSelect = {setSelectedState} options={options}/>
+          selectedState && <Sidebar Slide hover={hoverState} setHover={setHoverState} select={selectedState} setSelect = {setSelectedState} options={options}/>
         }
       </AnimatePresence >
       <motion.div

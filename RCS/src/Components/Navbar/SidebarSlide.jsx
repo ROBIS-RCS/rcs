@@ -41,7 +41,7 @@ const SidebarSlide = ({hover, select, setSelect, options}) => {
         {
         options.map((option, key)=> {
           return (
-            <SidebarSlideOptions name={option.name} link={option.link}>
+            <SidebarSlideOptions name={option.name} link={option.path} setSelect={setSelect}>
               {option.logo}
           </SidebarSlideOptions>
           )

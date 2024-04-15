@@ -9,7 +9,7 @@ const Home = ({log, setLog}) => {
     <div className="relative w-full h-full flex">
         <Sidebar />
         <TopNav log={log} setLog={setLog}/>
-        <div className="w-full pl-[5rem] pt-24 p-5 h-screen">
+        <div className="w-full pl-[5rem] pt-[5rem] p-5 h-screen">
           <Outlet/>
         </div>
         

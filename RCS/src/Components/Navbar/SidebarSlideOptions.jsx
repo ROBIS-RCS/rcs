@@ -1,7 +1,7 @@
 import {motion} from "framer-motion"
 import {Link} from "react-router-dom"
 
-const SidebarSlideOptions = ({children, name, link}) => {
+const SidebarSlideOptions = ({children, name, link, setSelect}) => {
 
     const entryExit = {
         entry: {
@@ -25,6 +25,7 @@ const SidebarSlideOptions = ({children, name, link}) => {
         initial="exit"
         animate="entry"
         exit="exit"
+        onClick={()=> setSelect(null)}
         >
         {children}
         <div className="flex overflow-clip place-items-center justify-between w-full">
