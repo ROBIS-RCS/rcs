@@ -39,8 +39,8 @@ const TopNav = (props) => {
       <img src={MothersonLogo} alt="" className="h-9" />
       <div className="flex items-center justify-center gap-7">
         <img
-          // src={auth.URL}
-          src=""
+          src={auth.URL}
+          // src=""
           alt=""
           className="w-12 h-12 rounded-full bg-[#fff] mb-2"
           onClick={Profile}
@@ -59,19 +59,19 @@ const TopNav = (props) => {
           >
             <span className="flex gap-4 items-center">
               <img
-                // src={auth.URL}
-                src=""
+                src={auth.URL}
+                // src=""
                 alt=""
                 className="w-12 h-12 rounded-full bg-[#fff]"
               />
               <span>
                 <p className="text-[20px]  font-bold text-white font-mono tracking-wide">
-                  {/* {auth.user} */}
-                  off_User
+                  {auth.user}
+                  {/* off_User */}
                 </p>
                 <p className="text-[14px] font-semibold text-red-500">
-                  {/* {auth.role} */}
-                  Admin
+                  {auth.role}
+                  {/* Admin */}
                 </p>
               </span>
             </span>

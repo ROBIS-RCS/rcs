@@ -31,7 +31,7 @@ const Login = (props) => {
       .then((res) => res.json())
       .then((data) => {
         console.log(data);
-        if (false) {
+        if (data.success) {
           //data.success
           setUser(data.user_data);
           signIn({
